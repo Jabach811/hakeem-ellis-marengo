@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "business-law",
+    "title": "Business Law",
+    "group": "business-property",
+    "summary": "Practical legal guidance for businesses from formation through transactions, disputes, succession, and dissolution.",
+    "contentFile": "src/content/practices/business-law.html",
+    "matters": ["Business formation", "Contracts", "Business purchases and sales", "Compliance", "Business disputes"],
+    "related": ["corporate-law", "civil-litigation", "real-estate"]
+  },
+  {
+    "slug": "corporate-law",
+    "title": "Corporate Law",
+    "group": "business-property",
+    "summary": "Counsel for formation, governance, agreements, transactions, employment documents, and corporate disputes.",
+    "contentFile": "src/content/practices/corporate-law.html",
+    "matters": ["Entity formation", "Corporate governance", "Business contracts", "Employment documents", "Dissolution"],
+    "related": ["business-law", "civil-litigation", "real-estate"]
+  },
+  {
+    "slug": "real-estate",
+    "title": "Real Estate",
+    "group": "business-property",
+    "summary": "Guidance for transactions, development, land use, commercial leases, construction matters, and property disputes.",
+    "contentFile": "src/content/practices/real-estate.html",
+    "matters": ["Property transactions", "Commercial development", "Land use", "Construction disputes", "Easement and ownership disputes"],
+    "related": ["business-law", "civil-law", "civil-litigation"]
+  },
+  {
+    "slug": "civil-law",
+    "title": "Civil Law",
+    "group": "disputes-defense",
+    "summary": "Strategic guidance for individuals, professionals, and businesses facing complex civil disputes.",
+    "contentFile": "src/content/practices/civil-law.html",
+    "matters": ["Contract disputes", "Real estate disputes", "Civil claims and defense", "Professional disputes"],
+    "related": ["civil-litigation", "business-law", "real-estate"]
+  },
+  {
+    "slug": "civil-litigation",
+    "title": "Civil Litigation",
+    "group": "disputes-defense",
+    "summary": "Prepared, practical representation for plaintiffs and defendants through negotiation, mediation, and trial.",
+    "contentFile": "src/content/practices/civil-litigation.html",
+    "matters": ["Commercial litigation", "Contract claims", "Property litigation", "Plaintiff and defense representation"],
+    "related": ["civil-law", "business-law", "real-estate"]
+  },
+  {
+    "slug": "criminal-defense",
+    "title": "Criminal Defense",
+    "group": "disputes-defense",
+    "summary": "Direct, experienced representation for misdemeanor, felony, DUI, drug, property, and federal criminal matters.",
+    "contentFile": "src/content/practices/criminal-defense.html",
+    "matters": ["DUI", "Drug offenses", "Property crimes", "Weapons charges", "Misdemeanors and felonies", "Post-conviction support"],
+    "related": ["professional-license-defense", "restraining-orders", "civil-litigation"]
+  },
+  {
+    "slug": "professional-license-defense",
+    "title": "Professional License Defense",
+    "group": "disputes-defense",
+    "summary": "Representation for licensed professionals facing investigations, accusations, discipline, or application issues.",
+    "contentFile": "src/content/practices/professional-license-defense.html",
+    "matters": ["Board investigations", "Disciplinary accusations", "License applications", "Criminal-conviction disclosure", "Administrative hearings"],
+    "related": ["criminal-defense", "civil-litigation", "business-law"]
+  },
+  {
+    "slug": "restraining-orders",
+    "title": "Restraining Orders",
+    "group": "disputes-defense",
+    "summary": "Representation for people seeking or responding to domestic violence, civil harassment, elder-abuse, and workplace orders.",
+    "contentFile": "src/content/practices/restraining-orders.html",
+    "matters": ["Domestic violence orders", "Civil harassment orders", "Elder-abuse orders", "Workplace violence orders", "Order defense"],
+    "related": ["family-law", "criminal-defense", "civil-litigation"]
+  },
+  {
+    "slug": "family-law",
+    "title": "Family Law",
+    "group": "families-estates",
+    "summary": "Careful legal guidance for divorce, custody, support, adoption, and marital agreements.",
+    "contentFile": "src/content/practices/family-law.html",
+    "matters": ["Divorce and separation", "Child custody", "Visitation", "Child support", "Adoption", "Prenuptial agreements"],
+    "related": ["restraining-orders", "estate-planning", "civil-litigation"]
+  },
+  {
+    "slug": "estate-planning",
+    "title": "Estate Planning",
+    "group": "families-estates",
+    "summary": "Thoughtful planning through wills, trusts, powers of attorney, health directives, and asset-protection strategies.",
+    "contentFile": "src/content/practices/estate-planning.html",
+    "matters": ["Wills", "Trusts", "Powers of attorney", "Health care directives", "Asset planning", "Trust administration"],
+    "related": ["probate", "business-law", "real-estate"]
+  },
+  {
+    "slug": "probate",
+    "title": "Probate",
+    "group": "families-estates",
+    "summary": "Clear support for executors, beneficiaries, and families navigating California probate after a death.",
+    "contentFile": "src/content/practices/probate.html",
+    "matters": ["Opening probate", "Executor duties", "Creditor claims", "Estate assets", "Beneficiary distributions"],
+    "related": ["estate-planning", "family-law", "real-estate"]
+  }
+]

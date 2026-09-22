@@ -1,0 +1,26 @@
+{
+  "canonical": [
+    "/",
+    "/practice-areas/",
+    "/about/",
+    "/contact/",
+    "/accessibility/",
+    "/business-law/",
+    "/civil-law/",
+    "/civil-litigation/",
+    "/corporate-law/",
+    "/criminal-defense/",
+    "/estate-planning/",
+    "/family-law/",
+    "/probate/",
+    "/professional-license-defense/",
+    "/real-estate/",
+    "/restraining-orders/"
+  ],
+  "legacy": {
+    "/services": "/practice-areas/",
+    "/about-us-page---freddie": "/about/",
+    "/professions-discipline-by-licensing-agencies": "/professional-license-defense/",
+    "/conservatorship-and-guardianship": "/criminal-defense/"
+  }
+}

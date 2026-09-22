@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "michael-hakeem",
+    "name": "Michael D. Hakeem",
+    "shortName": "Michael Hakeem",
+    "summary": "More than five decades of experience in real estate, land use, transactions, environmental compliance, and civil law.",
+    "practiceSlugs": ["real-estate", "business-law", "civil-law"],
+    "contentFile": "src/content/attorneys/michael-hakeem.html"
+  },
+  {
+    "slug": "albert-ellis",
+    "name": "Albert M. Ellis",
+    "shortName": "Albert Ellis",
+    "summary": "A seasoned Central Valley trial attorney with extensive civil, criminal, family, and professional-license experience.",
+    "practiceSlugs": ["civil-litigation", "criminal-defense", "family-law", "professional-license-defense", "restraining-orders"],
+    "contentFile": "src/content/attorneys/albert-ellis.html"
+  },
+  {
+    "slug": "renee-marengo",
+    "name": "Renee M. Marengo",
+    "shortName": "Renee Marengo",
+    "summary": "Counsel for business formation, corporate matters, estate planning, trusts, probate, and wealth-management decisions.",
+    "practiceSlugs": ["business-law", "corporate-law", "estate-planning", "probate"],
+    "contentFile": "src/content/attorneys/renee-marengo.html"
+  },
+  {
+    "slug": "stephen-baker",
+    "name": "Stephen J. Baker",
+    "shortName": "Stephen Baker",
+    "summary": "Civil and criminal litigator experienced in trials, appeals, family law, real-property disputes, and restraining orders.",
+    "practiceSlugs": ["civil-litigation", "criminal-defense", "family-law", "real-estate", "restraining-orders"],
+    "contentFile": "src/content/attorneys/stephen-baker.html"
+  }
+]

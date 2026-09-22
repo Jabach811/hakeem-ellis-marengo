@@ -1,0 +1,62 @@
+{
+  "siteUrl": "https://www.hakeemellismarengo.com",
+  "firmName": "Hakeem, Ellis & Marengo",
+  "legalName": "Hakeem, Ellis & Marengo, A Professional Corporation",
+  "descriptor": "A Professional Corporation",
+  "foundedYear": 1985,
+  "locationLine": "Stockton, California",
+  "heroTitle": "Serving the Central Valley since 1985",
+  "heroSummary": "Experienced legal counsel for businesses, professionals, individuals, and families across Stockton and the Central Valley.",
+  "phone": {
+    "display": "(209) 474-2800",
+    "href": "tel:+12094742800"
+  },
+  "email": "info@hemlaw.com",
+  "fax": "(209) 474-3654",
+  "address": {
+    "street": "3414 Brookside Rd. Ste 100",
+    "city": "Stockton",
+    "state": "CA",
+    "postalCode": "95219",
+    "display": "3414 Brookside Rd. Ste 100, Stockton, CA 95219"
+  },
+  "hours": "Monday–Friday, 9:00 a.m.–5:00 p.m.",
+  "directionsUrl": "https://www.google.com/maps/search/?api=1&query=3414%20Brookside%20Rd.%20Ste%20100%2C%20Stockton%2C%20CA%2095219",
+  "practiceGroups": [
+    {
+      "slug": "business-property",
+      "title": "Business & Property",
+      "description": "Counsel for companies, transactions, property, development, and the decisions that shape long-term business interests."
+    },
+    {
+      "slug": "disputes-defense",
+      "title": "Disputes & Defense",
+      "description": "Focused representation when rights, reputation, livelihood, or liberty are at stake."
+    },
+    {
+      "slug": "families-estates",
+      "title": "Families & Estates",
+      "description": "Practical guidance through family transitions, lifetime planning, and the administration of an estate."
+    }
+  ],
+  "proofClaims": [
+    {
+      "value": "40+",
+      "label": "Years serving the Central Valley",
+      "requiresVerification": true
+    },
+    {
+      "value": "300+",
+      "label": "Companies served",
+      "requiresVerification": true
+    },
+    {
+      "value": "14,000+",
+      "label": "Clients served",
+      "requiresVerification": true
+    }
+  ],
+  "disclaimer": "The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.",
+  "privacyUrl": "https://www.broadproximity.com/client-privacy-policy",
+  "termsUrl": "https://www.broadproximity.com/client-terms-of-use"
+}

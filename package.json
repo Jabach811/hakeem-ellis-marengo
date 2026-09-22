@@ -1,0 +1,19 @@
+{
+  "name": "hakeem-ellis-marengo-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node tools/build-site.mjs",
+    "test": "node --test",
+    "validate": "node tools/validate-site.mjs",
+    "serve": "node tools/serve.mjs"
+  },
+  "dependencies": {
+    "@fontsource/newsreader": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8"
+  }
+}
