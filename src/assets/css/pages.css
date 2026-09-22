@@ -6,24 +6,29 @@
 .home-intro__statement {
   max-width: 22ch;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4.25rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1.08;
 }
 
 .home-intro__copy {
-  align-self: end;
+  align-self: center;
 }
 
 .home-practices__header,
 .home-attorneys__header {
   display: grid;
-  gap: var(--space-6);
-  margin-block-end: var(--space-12);
+  align-items: end;
+  gap: var(--space-4);
+  margin-block-end: var(--space-8);
+}
+
+.practice-path h2 {
+  font-size: var(--font-size-xl);
 }
 
 .firm-story {
   display: grid;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 
 .firm-story__year {
@@ -38,27 +43,9 @@
 }
 
 .page-hero {
-  position: relative;
-  overflow: clip;
-  padding-block: clamp(5rem, 12vw, 9rem);
+  padding-block: var(--section-space);
   border-block-end: var(--border-thin) solid var(--color-rule);
   background: var(--color-surface-muted);
-}
-
-.page-hero::before {
-  position: absolute;
-  inset: auto -12vw -40% auto;
-  width: 36vw;
-  min-width: 18rem;
-  aspect-ratio: 1;
-  border: var(--border-thin) solid var(--color-rule-strong);
-  border-radius: 50%;
-  content: "";
-}
-
-.page-hero__inner {
-  position: relative;
-  z-index: 1;
 }
 
 .page-hero h1 {
@@ -67,14 +54,14 @@
 
 .page-hero__lede {
   max-width: 46rem;
-  margin-block-start: var(--space-6);
+  margin-block-start: var(--space-4);
   color: var(--color-text-muted);
   font-size: var(--font-size-md);
 }
 
 .page-layout {
   display: grid;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 
 .page-aside {
@@ -94,35 +81,40 @@
   border-block-start: var(--border-thin) solid var(--color-rule);
 }
 
-.related-list {
+.page-aside__list {
   margin: var(--space-4) 0 0;
   padding: 0;
   list-style: none;
 }
 
-.related-list li + li {
+.page-aside__list li + li {
   margin-block-start: var(--space-3);
 }
 
 .about-intro {
   display: grid;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 
 .team-list {
   display: grid;
-  gap: var(--space-16);
+  gap: var(--space-8);
+  margin-block-start: var(--space-6);
 }
 
 .team-profile {
   display: grid;
-  gap: var(--space-8);
-  padding-block-start: var(--space-12);
+  gap: var(--space-6);
+  padding-block-start: var(--space-6);
   border-block-start: var(--border-thin) solid var(--color-rule);
 }
 
 .team-profile__summary {
   max-width: 30rem;
+}
+
+.team-profile__summary h3 {
+  margin-block-end: var(--space-3);
 }
 
 .team-profile__practices {
@@ -141,13 +133,16 @@
 
 .contact-page__grid {
   display: grid;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 
 .contact-card {
-  padding: var(--space-8);
-  border: var(--border-thin) solid var(--color-rule);
-  background: var(--color-surface-raised);
+  padding-block-start: var(--space-6);
+  border-block-start: var(--border-thin) solid var(--color-rule);
+}
+
+.contact-card p + p {
+  margin-block-start: var(--space-4);
 }
 
 .contact-card h2 {
@@ -157,7 +152,7 @@
 
 .contact-list {
   display: grid;
-  gap: var(--space-6);
+  gap: var(--space-4);
   margin: 0;
 }
 
@@ -177,14 +172,15 @@
 }
 
 .notice {
-  padding: var(--space-6);
-  border-inline-start: var(--border-strong) solid var(--color-accent);
-  background: var(--color-surface-muted);
+  max-width: 36rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
 }
 
 .not-found {
   display: grid;
-  min-height: 64vh;
+  min-height: 40vh;
   place-items: center;
   text-align: center;
 }
@@ -240,7 +236,7 @@
 
   .firm-story {
     grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
-    align-items: end;
+    align-items: center;
   }
 
   .team-profile {
@@ -291,12 +287,12 @@
 .office-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  background: var(--color-ink);
+  background: var(--color-surface-dark);
 }
 
 .office-gallery img {
   width: 100%;
-  height: clamp(16rem, 32vw, 32rem);
+  height: clamp(14rem, 24vw, 22rem);
   object-fit: cover;
 }
 

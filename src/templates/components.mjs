@@ -14,7 +14,7 @@ export function escapeHtml(value = '') {
     .replaceAll("'", '&#039;');
 }
 
-function navItems(activePath, className) {
+function navItems(activePath) {
   return primaryNav.map(({ href, label }) => {
     const current = activePath === href ? ' aria-current="page"' : '';
     return `<li><a href="${href}"${current}>${escapeHtml(label)}</a></li>`;
@@ -25,11 +25,8 @@ export function renderHeader(site, activePath = '') {
   return `
     <div class="utility-bar">
       <div class="container utility-bar__inner">
-        <a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a>
-        <div class="utility-bar__secondary">
-          <span>${escapeHtml(site.locationLine || site.address.display)}</span>
-          <span>${escapeHtml(site.hours)}</span>
-        </div>
+        <span>${escapeHtml(site.locationLine || site.address.display)}</span>
+        <span>${escapeHtml(site.hours)}</span>
       </div>
     </div>
     <header class="masthead">
@@ -41,7 +38,7 @@ export function renderHeader(site, activePath = '') {
         <nav class="site-nav" aria-label="Primary navigation">
           <ul class="site-nav__list">${navItems(activePath, 'site-nav__list')}</ul>
         </nav>
-        <a class="button button--primary masthead__call" href="${site.phone.href}">Call the office</a>
+        <a class="button button--primary masthead__call" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a>
         <details class="mobile-nav-fallback">
           <summary>Menu</summary>
           <nav aria-label="Mobile fallback navigation">
@@ -67,7 +64,7 @@ export function renderNavDrawer(site, activePath = '') {
         <ul class="nav-drawer__list">${navItems(activePath, 'nav-drawer__list')}</ul>
       </nav>
       <div class="stack" style="--stack-space: var(--space-3); margin-block-start: var(--space-8)">
-        <a class="button button--on-dark" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a>
+        <a class="button button--secondary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a>
         <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>
       </div>
     </aside>
@@ -83,8 +80,8 @@ export function renderContactPanel(site) {
           <h2 id="contact-panel-title">Talk with the firm about your legal matter.</h2>
           <p>Call during office hours or email the firm to request a conversation. Contacting the office does not by itself create an attorney-client relationship.</p>
           <div class="cluster">
-            <a class="button button--primary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a>
-            <a class="button button--on-dark" href="mailto:${escapeHtml(site.email)}">Email the office</a>
+            <a class="button button--primary desktop-only" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a>
+            <a class="button button--secondary" href="mailto:${escapeHtml(site.email)}">Email the office</a>
           </div>
         </div>
         <dl class="contact-panel__details">
@@ -101,9 +98,8 @@ export function renderFooter(site) {
   return `
     <footer class="site-footer">
       <div class="container site-footer__grid">
-        <div class="stack" style="--stack-space: var(--space-4)">
-          <div class="site-footer__brand">${escapeHtml(site.firmName)}</div>
-          <p>${escapeHtml(site.descriptor)}</p>
+        <div class="stack" style="--stack-space: var(--space-3)">
+          <p class="site-footer__brand">${escapeHtml(site.firmName)}, <span class="site-footer__descriptor">${escapeHtml(site.descriptor)}</span></p>
           <p>${escapeHtml(site.address.display)}<br><a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a></p>
         </div>
         <div class="stack" style="--stack-space: var(--space-6)">

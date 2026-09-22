@@ -9,7 +9,7 @@ The rebuilt site is technically complete, but the firm should confirm the items 
 - [ ] Confirm the public claim “14,000+ clients,” including the source and counting method.
 - [ ] Confirm the firm name, legal descriptor, 1985 founding date, Stockton location, phone, email, fax, address, and office hours.
 
-The preview visibly marks the three numerical claims as “Needs firm confirmation.” Remove that note only after approval.
+The three numerical claims are hidden from the home page while `requiresVerification` is `true` in `src/data/site.json`. Set it to `false` only after approval.
 
 ## Attorneys and practice content
 
@@ -30,5 +30,5 @@ The preview visibly marks the three numerical claims as “Needs firm confirmati
 - [ ] Run `npm test`, `npm run build`, and `npm run validate` from a clean checkout.
 - [ ] Preview the generated site and recheck telephone, email, directions, privacy, and terms destinations.
 - [ ] Confirm the canonical production domain before deployment.
-- [ ] Remove or revise every visible “Needs firm confirmation” note only after the related claim has been approved.
+- [ ] Set `requiresVerification` to `false` for each proof claim only after the related claim has been approved.
 - [ ] Keep a dated record of the final content approver and the files released.

@@ -11,8 +11,6 @@ if (openButton && closeButton && drawer && backdrop && pageRegion) {
     openButton.setAttribute('aria-expanded', String(open));
     drawer.hidden = !open;
     backdrop.hidden = !open;
-    drawer.dataset.open = String(open);
-    backdrop.dataset.open = String(open);
     pageRegion.inert = open;
 
     if (open) {
@@ -32,17 +30,5 @@ if (openButton && closeButton && drawer && backdrop && pageRegion) {
     if (event.key === 'Escape' && openButton.getAttribute('aria-expanded') === 'true') {
       setMenuOpen(false);
     }
-  });
-}
-
-for (const disclosure of document.querySelectorAll('[data-disclosure]')) {
-  const button = disclosure.querySelector('[data-disclosure-button]');
-  const panel = disclosure.querySelector('[data-disclosure-panel]');
-  if (!button || !panel) continue;
-
-  button.addEventListener('click', () => {
-    const open = button.getAttribute('aria-expanded') !== 'true';
-    button.setAttribute('aria-expanded', String(open));
-    panel.hidden = !open;
   });
 }

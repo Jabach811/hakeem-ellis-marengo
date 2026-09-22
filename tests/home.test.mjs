@@ -14,7 +14,7 @@ test('homepage contains the approved discovery sequence and complete firm invent
 
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, />Serving the Central Valley since 1985</);
-  assert.match(html, /Founded in Stockton in 1985/);
+  assert.match(html, /A Stockton firm advising individuals and businesses/);
   assert.match(html, /id="firm-distinction"/);
   assert.match(html, /id="firm-history"/);
 
@@ -31,9 +31,10 @@ test('homepage contains the approved discovery sequence and complete firm invent
   }
 
   for (const claim of site.proofClaims) {
-    assert.ok(html.includes(`>${claim.value}<`), `${claim.value} proof claim is present`);
+    const present = html.includes(`>${claim.value}<`);
+    assert.equal(present, !claim.requiresVerification, `${claim.value} proof claim shown only once confirmed`);
   }
-  assert.equal((html.match(/Needs firm confirmation/g) || []).length, 3);
+  assert.doesNotMatch(html, /Needs firm confirmation/);
   assert.match(html, />Call \(209\) 474-2800</);
   assert.match(html, />Explore practice areas</);
 });
