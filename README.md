@@ -48,4 +48,4 @@ JavaScript enhances the mobile navigation, including Escape-key close and focus 
 
 ## Before publishing
 
-Complete [the content-verification checklist](docs/CONTENT-VERIFICATION.md). The three proof claims are intentionally labeled “Needs firm confirmation” in this preview until the firm approves them. Publishing is separate from this repository build and has not been performed by these instructions.
+Complete [the content-verification checklist](docs/CONTENT-VERIFICATION.md). The three proof claims are hidden from the home page until the firm approves them; set `requiresVerification` to `false` in `src/data/site.json` to show each one. Publishing is separate from this repository build and has not been performed by these instructions.

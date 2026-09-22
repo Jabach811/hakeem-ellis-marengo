@@ -12,9 +12,11 @@ const defaultSite = JSON.parse(
 );
 
 function renderHero(page) {
+  if (page.hero === null) return '';
   const hero = page.hero || {};
   const h1 = escapeHtml(page.h1);
-  const kicker = hero.kicker ? `<p class="${hero.type === 'home' ? 'hero__kicker' : 'eyebrow'}">${escapeHtml(hero.kicker)}</p>` : '';
+  const kickerText = hero.kickerHref ? `<a href="${escapeHtml(hero.kickerHref)}">${escapeHtml(hero.kicker)}</a>` : escapeHtml(hero.kicker);
+  const kicker = hero.kicker ? `<p class="${hero.type === 'home' ? 'hero__kicker' : 'eyebrow'}">${kickerText}</p>` : '';
   const summary = hero.summary ? `<p class="${hero.type === 'home' ? 'hero__summary' : 'page-hero__lede'}">${escapeHtml(hero.summary)}</p>` : '';
 
   if (hero.type === 'home') {

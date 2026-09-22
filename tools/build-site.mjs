@@ -171,7 +171,7 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
   const pageForRoute = (route) => {
     if (route === '/') return renderHome({ site, practices, attorneys });
     if (route === '/practice-areas/') return renderPracticeDirectory({ site, practices });
-    if (route === '/about/') return renderAbout({ site, attorneys, firmContent, biographies });
+    if (route === '/about/') return renderAbout({ site, attorneys, practices, firmContent, biographies });
     if (route === '/contact/') return renderContact({ site });
     if (route === '/accessibility/') return renderAccessibility({ site });
     const slug = route.replace(/^\/+|\/+$/g, '');
