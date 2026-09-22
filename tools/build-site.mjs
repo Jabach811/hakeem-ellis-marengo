@@ -56,6 +56,52 @@ async function loadContent(projectRoot, owner, contentFile) {
   return readFile(path, 'utf8');
 }
 
+function readPath(object, path) {
+  return path.split('.').reduce((value, key) => value?.[key], object);
+}
+
+function validateSiteData(site, practices, routes) {
+  const requiredSiteValues = [
+    'siteUrl', 'firmName', 'descriptor', 'heroTitle', 'heroSummary',
+    'phone.display', 'phone.href', 'email', 'fax', 'address.display',
+    'hours', 'directionsUrl', 'disclaimer', 'privacyUrl', 'termsUrl'
+  ];
+  for (const path of requiredSiteValues) {
+    const value = readPath(site, path);
+    if (typeof value !== 'string' || value.trim() === '') throw new Error(`site: missing required value ${path}`);
+  }
+  if (!Array.isArray(routes.canonical) || !routes.canonical.includes('/')) throw new Error('routes: canonical routes must include /');
+  if (!routes.legacy || typeof routes.legacy !== 'object') throw new Error('routes: legacy route map is required');
+  for (const practice of practices) {
+    for (const field of ['slug', 'title', 'summary', 'contentFile']) {
+      if (typeof practice[field] !== 'string' || practice[field].trim() === '') throw new Error(`${practice.slug || 'practice'}: missing required value ${field}`);
+    }
+    if (!routes.canonical.includes(`/${practice.slug}/`)) throw new Error(`${practice.slug}: canonical route is missing`);
+  }
+  for (const [legacy, canonical] of Object.entries(routes.legacy)) {
+    if (!legacy.startsWith('/') || !routes.canonical.includes(canonical)) throw new Error(`${legacy}: invalid legacy destination ${canonical}`);
+  }
+}
+
+function validatePageContract(route, page) {
+  for (const field of ['title', 'description', 'canonicalPath', 'h1', 'body']) {
+    if (typeof page[field] !== 'string' || page[field].trim() === '') throw new Error(`${route}: page is missing ${field}`);
+  }
+}
+
+async function validateImageManifest(sourceDir) {
+  const imageDir = join(sourceDir, 'assets', 'images');
+  const manifestPath = join(imageDir, 'manifest.json');
+  if (!(await exists(manifestPath))) throw new Error('assets: missing image manifest');
+  const manifest = await readJson(manifestPath);
+  for (const image of manifest) {
+    for (const field of ['file', 'width', 'height', 'alt', 'source']) {
+      if (!image[field]) throw new Error(`assets: image manifest entry is missing ${field}`);
+    }
+    if (!(await exists(join(imageDir, image.file)))) throw new Error(`assets: missing referenced image ${image.file}`);
+  }
+}
+
 async function copyAssets(sourceDir, outputDir, projectRoot) {
   const assetsSource = join(sourceDir, 'assets');
   const assetsOutput = join(outputDir, 'assets');
@@ -101,6 +147,7 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
     readJson(join(dataDir, 'practices.json')),
     readJson(join(dataDir, 'routes.json'))
   ]);
+  validateSiteData(site, practices, routes);
 
   const practiceContent = new Map();
   for (const practice of practices) {
@@ -115,6 +162,7 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
       biographies[attorney.slug] = await loadContent(projectRoot, attorney.slug, attorney.contentFile);
     }
   }
+  await validateImageManifest(resolvedSource);
 
   await rm(resolvedOutput, { recursive: true, force: true });
   await mkdir(resolvedOutput, { recursive: true });
@@ -133,12 +181,14 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
       site,
       practice,
       content: practiceContent.get(slug),
+      attorneys: attorneys.filter((attorney) => attorney.practiceSlugs.includes(slug)),
       related: practice.related.map((relatedSlug) => practiceBySlug.get(relatedSlug)).filter(Boolean)
     });
   };
 
   for (const route of routes.canonical) {
     const page = pageForRoute(route);
+    validatePageContract(route, page);
     await writePage(resolvedOutput, route, renderLayout({ ...page, site }));
   }
 
@@ -150,10 +200,13 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
   };
   for (const [from, to] of Object.entries(routes.legacy)) {
     const page = renderLegacyPage({ site, from, to, label: labels[to] || 'requested' });
+    validatePageContract(from, page);
     await writePage(resolvedOutput, from, renderLayout({ ...page, site }));
   }
 
-  await writePage(resolvedOutput, '/404.html', renderLayout({ ...renderNotFound({ site }), site }));
+  const notFoundPage = renderNotFound({ site });
+  validatePageContract('/404.html', notFoundPage);
+  await writePage(resolvedOutput, '/404.html', renderLayout({ ...notFoundPage, site }));
   await writeDiscoveryFiles(resolvedOutput, site, routes.canonical);
   const assetCount = await copyAssets(resolvedSource, resolvedOutput, projectRoot);
 

@@ -4,6 +4,7 @@ import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const VERIFIED_PHONE = 'tel:+12094742800';
+const VERIFIED_EMAIL = 'mailto:info@hemlaw.com';
 const PRIMARY_PATHS = ['/', '/practice-areas/', '/about/', '/contact/'];
 
 const exists = async (path) => {
@@ -55,9 +56,30 @@ export async function validateSite(rootDir = resolve('dist')) {
   const warnings = [];
   let links = 0;
   let images = 0;
+  const seenTitles = new Map();
+  const seenDescriptions = new Map();
+  const seenCanonicals = new Map();
+
+  const recordUnique = (map, value, file, rule) => {
+    if (!value) return;
+    if (map.has(value)) {
+      addError(errors, root, file, rule, `duplicates ${map.get(value)}`);
+    } else {
+      map.set(value, file.slice(root.length + 1).replaceAll('\\', '/'));
+    }
+  };
 
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
+    const title = visibleText(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '');
+    const descriptionTag = html.match(/<meta\b[^>]*name=["']description["'][^>]*>/i)?.[0] || '';
+    const canonicalTag = html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i)?.[0] || '';
+    const description = attribute(descriptionTag, 'content');
+    const canonical = attribute(canonicalTag, 'href');
+    recordUnique(seenTitles, title, file, 'unique-title');
+    recordUnique(seenDescriptions, description, file, 'unique-description');
+    if (!/class=["'][^"']*legacy-notice/i.test(html)) recordUnique(seenCanonicals, canonical, file, 'unique-canonical');
+
     const h1Count = (html.match(/<h1\b/gi) || []).length;
     if (h1Count !== 1) addError(errors, root, file, 'single-h1', `expected one h1, found ${h1Count}`);
     if (!/<meta\b[^>]*name=["']description["'][^>]*content=["'][^"']+["'][^>]*>/i.test(html)) {
@@ -73,6 +95,12 @@ export async function validateSite(rootDir = resolve('dist')) {
       addError(errors, root, file, 'placeholder-email', 'placeholder email found');
     }
 
+    const seenIds = new Set();
+    for (const match of html.matchAll(/\bid\s*=\s*(["'])(.*?)\1/gi)) {
+      if (seenIds.has(match[2])) addError(errors, root, file, 'duplicate-id', `duplicate id ${match[2]}`);
+      seenIds.add(match[2]);
+    }
+
     const nav = html.match(/<nav\b[^>]*(?:aria-label=["']Primary navigation["']|class=["'][^"']*site-nav[^"']*["'])[^>]*>([\s\S]*?)<\/nav>/i);
     const navHrefs = nav ? [...nav[1].matchAll(/<a\b[^>]*href=["']([^"']+)["']/gi)].map((match) => match[1]) : [];
     if (!nav || PRIMARY_PATHS.some((path) => !navHrefs.includes(path))) {
@@ -86,6 +114,9 @@ export async function validateSite(rootDir = resolve('dist')) {
       if (!href || !label) addError(errors, root, file, 'empty-control', 'link has no destination or accessible text');
       if (href.startsWith('tel:') && href !== VERIFIED_PHONE) {
         addError(errors, root, file, 'verified-telephone', `unexpected telephone destination ${href}`);
+      }
+      if (href.startsWith('mailto:') && href !== VERIFIED_EMAIL) {
+        addError(errors, root, file, 'verified-email', `unexpected email destination ${href}`);
       }
       const target = resolveLocalTarget(root, file, href);
       if (target && !(await exists(target))) addError(errors, root, file, 'broken-local-link', `${href} does not resolve`);

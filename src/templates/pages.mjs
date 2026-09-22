@@ -106,7 +106,7 @@ export function renderPracticeDirectory({ site, practices }) {
   };
 }
 
-export function renderPractice({ site, practice, related, content }) {
+export function renderPractice({ site, practice, related, content, attorneys = [] }) {
   return {
     title: `${practice.title} Attorneys in Stockton, CA`,
     description: practice.summary,
@@ -120,6 +120,7 @@ export function renderPractice({ site, practice, related, content }) {
           <article class="reading-width">${content}</article>
           <aside class="page-aside" aria-label="Practice overview">
             <div class="page-aside__section"><h2>Matters we handle</h2><ul class="matter-list">${practice.matters.map((matter) => `<li>${escapeHtml(matter)}</li>`).join('')}</ul></div>
+            <div class="page-aside__section"><h2>Attorneys</h2><ul class="related-list">${attorneys.map((attorney) => `<li><a href="/about/#${escapeHtml(attorney.slug)}">${escapeHtml(attorney.name)}</a></li>`).join('')}</ul></div>
             <div class="page-aside__section"><h2>Related practices</h2><ul class="related-list">${related.map((item) => `<li><a href="/${escapeHtml(item.slug)}/">${escapeHtml(item.title)}</a></li>`).join('')}</ul></div>
             <div class="page-aside__section"><a class="button button--primary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a></div>
           </aside>

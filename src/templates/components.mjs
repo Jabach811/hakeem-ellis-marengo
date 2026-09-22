@@ -137,7 +137,7 @@ export function renderAttorneySummary(attorney) {
 
 export function renderLegacyPage({ site, from, to, label }) {
   return {
-    title: `Page moved | ${site.firmName}`,
+    title: `${label} page moved | ${site.firmName}`,
     description: `The ${label} page has moved to a new address.`,
     canonicalPath: to,
     activePath: '',
