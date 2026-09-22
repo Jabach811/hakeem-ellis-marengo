@@ -57,6 +57,7 @@ export function renderLayout(page) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F7F3EA">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
   <title>${escapeHtml(pageTitle)}</title>
   <meta name="description" content="${escapeHtml(page.description)}">
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}">

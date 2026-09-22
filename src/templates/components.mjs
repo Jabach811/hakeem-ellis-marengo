@@ -42,6 +42,12 @@ export function renderHeader(site, activePath = '') {
           <ul class="site-nav__list">${navItems(activePath, 'site-nav__list')}</ul>
         </nav>
         <a class="button button--primary masthead__call" href="${site.phone.href}">Call the office</a>
+        <details class="mobile-nav-fallback">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile fallback navigation">
+            <ul>${navItems(activePath, 'mobile-nav-fallback__list')}</ul>
+          </nav>
+        </details>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-open>
           <span class="menu-button__bars" aria-hidden="true"></span>
           <span class="sr-only">Open navigation</span>

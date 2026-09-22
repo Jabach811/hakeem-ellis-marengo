@@ -1,3 +1,5 @@
+document.documentElement.classList.add('has-js');
+
 const openButton = document.querySelector('[data-menu-open]');
 const closeButton = document.querySelector('[data-menu-close]');
 const drawer = document.querySelector('[data-nav-drawer]');
