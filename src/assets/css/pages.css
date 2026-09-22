@@ -1,0 +1,266 @@
+.home-intro__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.home-intro__statement {
+  max-width: 22ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  line-height: 1.08;
+}
+
+.home-intro__copy {
+  align-self: end;
+}
+
+.home-practices__header,
+.home-attorneys__header {
+  display: grid;
+  gap: var(--space-6);
+  margin-block-end: var(--space-12);
+}
+
+.firm-story {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.firm-story__year {
+  color: var(--color-action);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 18vw, 11rem);
+  line-height: 0.82;
+}
+
+.firm-story__copy {
+  max-width: var(--layout-readable);
+}
+
+.page-hero {
+  position: relative;
+  overflow: clip;
+  padding-block: clamp(5rem, 12vw, 9rem);
+  border-block-end: var(--border-thin) solid var(--color-rule);
+  background: var(--color-surface-muted);
+}
+
+.page-hero::before {
+  position: absolute;
+  inset: auto -12vw -40% auto;
+  width: 36vw;
+  min-width: 18rem;
+  aspect-ratio: 1;
+  border: var(--border-thin) solid var(--color-rule-strong);
+  border-radius: 50%;
+  content: "";
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero h1 {
+  max-width: 16ch;
+}
+
+.page-hero__lede {
+  max-width: 46rem;
+  margin-block-start: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.page-layout {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.page-aside {
+  align-self: start;
+  padding: var(--space-6);
+  border-block-start: var(--border-strong) solid var(--color-action);
+  background: var(--color-surface-muted);
+}
+
+.page-aside h2 {
+  font-size: var(--font-size-lg);
+}
+
+.page-aside__section + .page-aside__section {
+  margin-block-start: var(--space-8);
+  padding-block-start: var(--space-8);
+  border-block-start: var(--border-thin) solid var(--color-rule);
+}
+
+.related-list {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-list li + li {
+  margin-block-start: var(--space-3);
+}
+
+.about-intro {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.team-list {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.team-profile {
+  display: grid;
+  gap: var(--space-8);
+  padding-block-start: var(--space-12);
+  border-block-start: var(--border-thin) solid var(--color-rule);
+}
+
+.team-profile__summary {
+  max-width: 30rem;
+}
+
+.team-profile__practices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  list-style: none;
+}
+
+.team-profile__bio {
+  max-width: var(--layout-readable);
+}
+
+.contact-page__grid {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.contact-card {
+  padding: var(--space-8);
+  border: var(--border-thin) solid var(--color-rule);
+  background: var(--color-surface-raised);
+}
+
+.contact-card h2 {
+  margin-block-end: var(--space-6);
+  font-size: var(--font-size-xl);
+}
+
+.contact-list {
+  display: grid;
+  gap: var(--space-6);
+  margin: 0;
+}
+
+.contact-list div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.contact-list dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.contact-list dd {
+  margin: 0;
+  font-size: var(--font-size-md);
+}
+
+.notice {
+  padding: var(--space-6);
+  border-inline-start: var(--border-strong) solid var(--color-accent);
+  background: var(--color-surface-muted);
+}
+
+.not-found {
+  display: grid;
+  min-height: 64vh;
+  place-items: center;
+  text-align: center;
+}
+
+.not-found__code {
+  color: var(--color-action);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 20vw, 11rem);
+  line-height: 0.8;
+}
+
+.not-found__content {
+  max-width: 42rem;
+}
+
+.not-found__content h1 {
+  margin-block-start: var(--space-6);
+}
+
+.not-found__content p {
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.not-found__actions {
+  justify-content: center;
+  margin-block-start: var(--space-8);
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__content {
+  animation: hero-reveal var(--duration-slow) var(--ease-standard) both;
+}
+
+@media (min-width: 48rem) {
+  .home-intro__grid,
+  .home-practices__header,
+  .home-attorneys__header,
+  .about-intro,
+  .contact-page__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .firm-story {
+    grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
+    align-items: end;
+  }
+
+  .team-profile {
+    grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
+  }
+}
+
+@media (min-width: 62rem) {
+  .page-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.36fr);
+  }
+
+  .page-aside {
+    position: sticky;
+    inset-block-start: 7.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content {
+    animation: none;
+  }
+}

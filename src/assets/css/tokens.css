@@ -1,0 +1,100 @@
+:root {
+  /* Primitive colors */
+  --burgundy-50: #F8EDEF;
+  --burgundy-100: #EFD6D9;
+  --burgundy-300: #C9858C;
+  --burgundy-500: #96313B;
+  --burgundy-700: #6D1118;
+  --wine-900: #3E080D;
+  --ink-900: #1A1C20;
+  --ink-800: #25282D;
+  --slate-700: #41464D;
+  --slate-600: #565C64;
+  --slate-400: #7A818A;
+  --paper-50: #F7F3EA;
+  --paper-100: #EFE9DE;
+  --stone-200: #D8D0C4;
+  --stone-300: #C5BAAA;
+  --brass-600: #9B6A33;
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* Primitive spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Primitive typography */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.375rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: clamp(2rem, 4vw, 3.25rem);
+  --font-size-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --line-tight: 1.02;
+  --line-heading: 1.12;
+  --line-body: 1.65;
+
+  /* Primitive geometry and motion */
+  --radius-subtle: 0.125rem;
+  --border-thin: 1px;
+  --border-strong: 2px;
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-slow: 480ms;
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --shadow-overlay: 0 1.5rem 4rem rgb(0 0 0 / 0.24);
+
+  /* Semantic color */
+  --color-surface: var(--paper-50);
+  --color-surface-raised: var(--white);
+  --color-surface-muted: var(--paper-100);
+  --color-surface-dark: var(--ink-900);
+  --color-text: var(--ink-900);
+  --color-text-muted: var(--slate-600);
+  --color-text-on-dark: var(--white);
+  --color-action: var(--burgundy-700);
+  --color-action-hover: var(--wine-900);
+  --color-action-soft: var(--burgundy-50);
+  --color-rule: var(--stone-200);
+  --color-rule-strong: var(--stone-300);
+  --color-accent: var(--brass-600);
+  --color-overlay: rgb(26 28 32 / 0.72);
+  --color-overlay-heavy: rgb(26 28 32 / 0.9);
+  --color-focus: var(--burgundy-500);
+
+  /* Semantic layout */
+  --layout-max: 75rem;
+  --layout-readable: 68ch;
+  --layout-gutter: clamp(1.125rem, 4vw, 3rem);
+  --section-space: clamp(4rem, 9vw, 8rem);
+  --section-space-compact: clamp(2.5rem, 6vw, 5rem);
+  --tap-target: 2.75rem;
+
+  /* Component tokens */
+  --button-primary-bg: var(--color-action);
+  --button-primary-fg: var(--white);
+  --button-primary-bg-hover: var(--color-action-hover);
+  --button-secondary-bg: transparent;
+  --button-secondary-fg: var(--color-text);
+  --button-secondary-border: var(--color-rule-strong);
+  --header-bg: var(--color-surface);
+  --header-fg: var(--color-text);
+  --footer-bg: var(--color-surface-dark);
+  --footer-fg: var(--color-text-on-dark);
+  --card-bg: var(--color-surface-raised);
+  --card-border: var(--color-rule);
+  --focus-width: 0.1875rem;
+  --focus-offset: 0.1875rem;
+}
