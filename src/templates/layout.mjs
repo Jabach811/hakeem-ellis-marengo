@@ -64,6 +64,11 @@ export function renderLayout(page) {
   <meta property="og:title" content="${escapeHtml(pageTitle)}">
   <meta property="og:description" content="${escapeHtml(page.description)}">
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}">
+  <meta property="og:image" content="${escapeHtml(`${site.siteUrl}/assets/images/hem-office-exterior.webp`)}">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="940">
+  <meta property="og:image:alt" content="Exterior of the Hakeem, Ellis &amp; Marengo office in Stockton">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">

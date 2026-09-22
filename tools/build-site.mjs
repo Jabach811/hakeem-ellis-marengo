@@ -36,6 +36,18 @@ async function writePage(outputDir, route, html) {
   await writeFile(path, `${html}\n`, 'utf8');
 }
 
+async function writeDiscoveryFiles(outputDir, site, canonicalRoutes) {
+  const sitemapEntries = canonicalRoutes
+    .map((route) => `  <url><loc>${site.siteUrl}${route}</loc></url>`)
+    .join('\n');
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+  const robots = `User-agent: *\nAllow: /\nSitemap: ${site.siteUrl}/sitemap.xml\n`;
+  await Promise.all([
+    writeFile(join(outputDir, 'sitemap.xml'), sitemap, 'utf8'),
+    writeFile(join(outputDir, 'robots.txt'), robots, 'utf8')
+  ]);
+}
+
 async function loadContent(projectRoot, owner, contentFile) {
   const path = resolve(projectRoot, contentFile);
   if (!(await exists(path))) {
@@ -142,6 +154,7 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
   }
 
   await writePage(resolvedOutput, '/404.html', renderLayout({ ...renderNotFound({ site }), site }));
+  await writeDiscoveryFiles(resolvedOutput, site, routes.canonical);
   const assetCount = await copyAssets(resolvedSource, resolvedOutput, projectRoot);
 
   return {

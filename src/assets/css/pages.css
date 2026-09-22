@@ -288,3 +288,20 @@
 .practice-directory__item h3 a:hover {
   color: var(--color-action);
 }
+.office-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: var(--color-ink);
+}
+
+.office-gallery img {
+  width: 100%;
+  height: clamp(16rem, 32vw, 32rem);
+  object-fit: cover;
+}
+
+@media (max-width: 42rem) {
+  .office-gallery {
+    grid-template-columns: 1fr;
+  }
+}
