@@ -264,3 +264,27 @@
     animation: none;
   }
 }
+.practice-directory__list {
+  display: grid;
+  gap: var(--space-6);
+  margin-block-start: var(--space-6);
+}
+
+.practice-directory__item {
+  padding-block-start: var(--space-5);
+  border-block-start: var(--border-thin) solid var(--color-rule);
+}
+
+.practice-directory__item h3,
+.practice-directory__item p {
+  margin-block-end: var(--space-3);
+}
+
+.practice-directory__item h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.practice-directory__item h3 a:hover {
+  color: var(--color-action);
+}

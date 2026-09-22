@@ -6,6 +6,12 @@ import {
 
 const groupPractices = (practices, group) => practices.filter((practice) => practice.group === group);
 
+const renderPracticeDirectoryItem = (practice) => `
+  <article class="practice-directory__item">
+    <h3><a href="/${escapeHtml(practice.slug)}/">${escapeHtml(practice.title)}</a></h3>
+    <p>${escapeHtml(practice.summary)}</p>
+  </article>`;
+
 export function renderHome({ site, practices, attorneys }) {
   const practiceGroups = site.practiceGroups.map((group) => `
     <section class="practice-path">
@@ -35,7 +41,7 @@ export function renderHome({ site, practices, attorneys }) {
       actions: `<div class="cluster hero__actions"><a class="button button--primary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a><a class="button button--on-dark" href="/practice-areas/">Explore practice areas</a></div>`
     },
     body: `
-      <section class="section home-intro">
+      <section class="section home-intro" id="firm-distinction">
         <div class="container home-intro__grid">
           <p class="home-intro__statement">Local perspective. Broad legal experience. Direct counsel.</p>
           <div class="home-intro__copy stack">
@@ -58,17 +64,6 @@ export function renderHome({ site, practices, attorneys }) {
           <div class="practice-paths">${practiceGroups}</div>
         </div>
       </section>
-      <section class="section section--muted firm-story">
-        <div class="container firm-story">
-          <div class="firm-story__year">1985</div>
-          <div class="firm-story__copy stack">
-            <p class="eyebrow">Rooted in Stockton</p>
-            <h2>Experience that stays personal.</h2>
-            <p class="lede">The firm's attorneys bring depth across transactions, litigation, defense, family matters, estates, and professional licensing—without losing direct client relationships.</p>
-            <p><a href="/about/">Read the firm story</a></p>
-          </div>
-        </div>
-      </section>
       <section class="section home-attorneys" aria-labelledby="home-attorneys-title">
         <div class="container">
           <div class="home-attorneys__header">
@@ -76,6 +71,18 @@ export function renderHome({ site, practices, attorneys }) {
             <p class="lede">Meet the people behind the firm's business, litigation, property, criminal, family, estate, and licensing work.</p>
           </div>
           <div class="attorney-grid">${attorneys.map(renderAttorneySummary).join('')}</div>
+        </div>
+      </section>
+      <section class="section section--muted firm-story" id="firm-history">
+        <div class="container firm-story">
+          <div class="firm-story__year">1985</div>
+          <div class="firm-story__copy stack">
+            <p class="eyebrow">Rooted in Stockton</p>
+            <h2>Experience that stays personal.</h2>
+            <p class="lede">The firm's attorneys bring depth across transactions, litigation, defense, family matters, estates, and professional licensing—without losing direct client relationships.</p>
+            <p>For four decades, the firm has helped Central Valley clients make difficult decisions, resolve disputes, protect what they have built, and plan what comes next.</p>
+            <p><a href="/about/">Read the firm story</a></p>
+          </div>
         </div>
       </section>`
   };
@@ -86,7 +93,7 @@ export function renderPracticeDirectory({ site, practices }) {
     <section class="practice-path">
       <h2>${escapeHtml(group.title)}</h2>
       <p class="practice-path__description">${escapeHtml(group.description)}</p>
-      <div class="practice-path__list">${groupPractices(practices, group.slug).map(renderPracticeLink).join('')}</div>
+      <div class="practice-directory__list">${groupPractices(practices, group.slug).map(renderPracticeDirectoryItem).join('')}</div>
     </section>`).join('');
   return {
     title: 'Practice Areas',
@@ -95,7 +102,7 @@ export function renderPracticeDirectory({ site, practices }) {
     activePath: '/practice-areas/',
     h1: 'Practice areas',
     hero: { kicker: 'Legal services', summary: 'The firm’s work is organized into three clear paths so you can find the right starting point.' },
-    body: `<section class="section"><div class="container"><div class="practice-paths">${groups}</div></div></section>`
+    body: `<section class="section"><div class="container"><div class="section-intro reading-width stack"><p class="lede">This grouping is a simple way to find a useful starting point. It does not limit the firm's services or the ways its attorneys may be able to help.</p></div><div class="practice-paths">${groups}</div></div></section>`
   };
 }
 
