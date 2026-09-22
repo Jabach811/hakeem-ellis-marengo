@@ -32,4 +32,3 @@ The preview visibly marks the three numerical claims as “Needs firm confirmati
 - [ ] Confirm the canonical production domain before deployment.
 - [ ] Remove or revise every visible “Needs firm confirmation” note only after the related claim has been approved.
 - [ ] Keep a dated record of the final content approver and the files released.
-

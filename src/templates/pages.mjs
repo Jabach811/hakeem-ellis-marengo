@@ -166,7 +166,7 @@ export function renderAccessibility({ site }) {
     activePath: '',
     h1: 'Website accessibility',
     hero: { kicker: 'Access for every visitor', summary: 'We want people with disabilities to be able to use this website and reach the firm.' },
-    body: `<section class="section"><div class="container reading-width stack"><h2>Our commitment</h2><p>We work to make this website clear, keyboard accessible, readable at different text sizes, and usable with common assistive technology.</p><h2>Need help?</h2><p>If you have trouble using any part of this website, call <a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a> or email <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>. Please identify the page and the problem so the firm can provide assistance.</p><p><strong>Last updated:</strong> September 21, 2026.</p></div></section>`
+    body: `<section class="section"><div class="container reading-width stack"><h2>Our commitment</h2><p>We work to make this website clear, keyboard accessible, readable at different text sizes, and usable with common assistive technology.</p><h2>Need help?</h2><p>If you have trouble using any part of this website, call <a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a> or email <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>. Please identify the page and the problem so the firm can provide assistance.</p><p><strong>Last updated:</strong> September 22, 2026.</p></div></section>`
   };
 }
 

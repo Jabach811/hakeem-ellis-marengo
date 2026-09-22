@@ -39,7 +39,7 @@ test('accessibility page provides direct help without third-party compliance cla
   const html = renderLayout({ ...renderAccessibility({ site }), site });
   assert.ok(html.includes(site.phone.href));
   assert.ok(html.includes(`mailto:${site.email}`));
-  assert.match(html, /Last updated:<\/strong> September 21, 2026/);
+  assert.match(html, /Last updated:<\/strong> September 22, 2026/);
   assert.doesNotMatch(html, /UserWay/i);
 });
 

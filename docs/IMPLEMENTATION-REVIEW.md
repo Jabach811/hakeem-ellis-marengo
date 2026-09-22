@@ -61,4 +61,3 @@ Met. The project contains no portal, chat, payments, booking, intake form, testi
 ## 15. Completion criteria
 
 Met for the private implementation and handoff. The design system, content inventory, routes, static portability, automated checks, and browser checks are complete. No unresolved implementation deviation remains. Public release is intentionally held behind the content-verification checklist.
-
