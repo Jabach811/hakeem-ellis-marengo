@@ -38,3 +38,14 @@ test('homepage contains the approved discovery sequence and complete firm invent
   assert.match(html, />Call \(209\) 474-2800</);
   assert.match(html, />Explore practice areas</);
 });
+
+test('homepage uses the handoff hero, situation links, and office introduction', () => {
+  const html = renderLayout({ ...renderHome({ site, practices, attorneys }), site });
+
+  assert.match(html, /hem-office-building\.webp/);
+  assert.match(html, /class="hero__practice-strip"/);
+  assert.match(html, /href="\/practice-areas\/#business-property"/);
+  assert.match(html, /class="home-firm-intro__image"/);
+  assert.match(html, /Reception, 3414 Brookside Rd\. Ste 100, Stockton/);
+  assert.match(html, /class="home-practice-groups"/);
+});

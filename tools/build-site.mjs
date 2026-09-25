@@ -30,6 +30,22 @@ function routeOutputPath(outputDir, route) {
   return join(outputDir, route.replace(/^\/+|\/+$/g, ''), 'index.html');
 }
 
+function makeLocalUrlsPortable(html, route) {
+  const depth = route === '/' || route === '/404.html'
+    ? 0
+    : route.replace(/^\/+|\/+$/g, '').split('/').length;
+  const toRoot = '../'.repeat(depth);
+
+  return html.replace(/\b(href|src)=(['"])\/(?!\/)([^'"]*)\2/g, (_match, attribute, quote, path) => {
+    const [pathname, suffix = ''] = path.split(/(?=[?#])/);
+    const localPath = attribute === 'href' && (pathname === '' || pathname.endsWith('/'))
+      ? `${pathname}index.html`
+      : pathname;
+    const relativePath = `${toRoot}${localPath}${suffix}`;
+    return `${attribute}=${quote}${relativePath}${quote}`;
+  });
+}
+
 async function writePage(outputDir, route, html) {
   const path = routeOutputPath(outputDir, route);
   await mkdir(dirname(path), { recursive: true });
@@ -189,7 +205,7 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
   for (const route of routes.canonical) {
     const page = pageForRoute(route);
     validatePageContract(route, page);
-    await writePage(resolvedOutput, route, renderLayout({ ...page, site }));
+    await writePage(resolvedOutput, route, makeLocalUrlsPortable(renderLayout({ ...page, site }), route));
   }
 
   const labels = {
@@ -201,12 +217,12 @@ export async function buildSite({ sourceDir = resolve('src'), outputDir = resolv
   for (const [from, to] of Object.entries(routes.legacy)) {
     const page = renderLegacyPage({ site, from, to, label: labels[to] || 'requested' });
     validatePageContract(from, page);
-    await writePage(resolvedOutput, from, renderLayout({ ...page, site }));
+    await writePage(resolvedOutput, from, makeLocalUrlsPortable(renderLayout({ ...page, site }), from));
   }
 
   const notFoundPage = renderNotFound({ site });
   validatePageContract('/404.html', notFoundPage);
-  await writePage(resolvedOutput, '/404.html', renderLayout({ ...notFoundPage, site }));
+  await writePage(resolvedOutput, '/404.html', makeLocalUrlsPortable(renderLayout({ ...notFoundPage, site }), '/404.html'));
   await writeDiscoveryFiles(resolvedOutput, site, routes.canonical);
   const assetCount = await copyAssets(resolvedSource, resolvedOutput, projectRoot);
 

@@ -34,6 +34,7 @@ function renderHero(page) {
             ${hero.actions || ''}
           </div>
         </div>
+        ${hero.strip || ''}
       </section>`;
   }
 

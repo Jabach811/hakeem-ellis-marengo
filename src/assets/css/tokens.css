@@ -18,6 +18,10 @@
   --stone-200: #D8D0C4;
   --stone-300: #C5BAAA;
   --brass-600: #9B6A33;
+  --brass-300: #C9A06A;
+  --brass-200: #D9B27A;
+  --sand-200: #E9DCC7;
+  --sand-400: #C9BFAF;
   --white: #FFFFFF;
   --black: #000000;
 
@@ -87,6 +91,7 @@
   --section-space: clamp(2.5rem, 5vw, 4rem);
   --section-space-compact: clamp(1.5rem, 3vw, 2.5rem);
   --tap-target: 2.75rem;
+  --button-min-height: 3.25rem;
 
   /* Component tokens */
   --button-primary-bg: var(--color-action);

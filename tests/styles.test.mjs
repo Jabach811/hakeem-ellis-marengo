@@ -25,3 +25,16 @@ test('component and page CSS use tokens instead of raw hex colors', async () => 
     assert.doesNotMatch(css, /#[0-9a-f]{3,8}\b/i);
   }
 });
+
+test('hero uses the approved directional scrim instead of fading the image away', async () => {
+  const css = await readFile('src/assets/css/components.css', 'utf8');
+  assert.match(css, /\.hero::before\s*\{[\s\S]*?linear-gradient\(90deg/);
+  assert.match(css, /\.hero::before\s*\{[\s\S]*?linear-gradient\(0deg/);
+});
+
+test('hero copy stays white without a text shadow over the directional scrim', async () => {
+  const css = await readFile('src/assets/css/components.css', 'utf8');
+  assert.match(css, /\.hero\s*\{[\s\S]*?color:\s*var\(--porcelain-50\)/);
+  assert.doesNotMatch(css, /\.hero__content\s*\{[\s\S]*?text-shadow:/);
+  assert.match(css, /\.hero__kicker,[\s\S]*?\.hero__summary\s*\{[\s\S]*?color:\s*inherit/);
+});

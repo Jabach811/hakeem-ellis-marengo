@@ -75,8 +75,8 @@ export function renderContactPanel(site) {
   return `
     <section class="contact-panel section" aria-labelledby="contact-panel-title">
       <div class="container contact-panel__grid">
-        <div class="stack">
-          <p class="eyebrow">Start with a direct conversation</p>
+        <div class="contact-panel__intro stack">
+          <p class="eyebrow eyebrow--dark">Start with a direct conversation</p>
           <h2 id="contact-panel-title">Talk with the firm about your legal matter.</h2>
           <p>Call during office hours or email the firm to request a conversation. Contacting the office does not by itself create an attorney-client relationship.</p>
           <div class="cluster">
@@ -87,6 +87,8 @@ export function renderContactPanel(site) {
         <dl class="contact-panel__details">
           <div><dt>Office</dt><dd>${escapeHtml(site.address.display)}</dd></div>
           <div><dt>Hours</dt><dd>${escapeHtml(site.hours)}</dd></div>
+          <div><dt>Phone</dt><dd><a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a></dd></div>
           <div><dt>Directions</dt><dd><a href="${escapeHtml(site.directionsUrl)}">Open in Google Maps</a></dd></div>
         </dl>
       </div>
@@ -98,21 +100,27 @@ export function renderFooter(site) {
   return `
     <footer class="site-footer">
       <div class="container site-footer__grid">
-        <div class="stack" style="--stack-space: var(--space-3)">
-          <p class="site-footer__brand">${escapeHtml(site.firmName)}, <span class="site-footer__descriptor">${escapeHtml(site.descriptor)}</span></p>
+        <div class="site-footer__identity stack" style="--stack-space: var(--space-3)">
+          <p class="site-footer__brand">${escapeHtml(site.firmName)}<span class="site-footer__descriptor">${escapeHtml(site.descriptor)}</span></p>
           <p>${escapeHtml(site.address.display)}<br><a href="${site.phone.href}">${escapeHtml(site.phone.display)}</a></p>
         </div>
-        <div class="stack" style="--stack-space: var(--space-6)">
+        <div class="site-footer__nav stack" style="--stack-space: var(--space-3)">
+          <p class="micro-label">Firm</p>
           <ul class="site-footer__links">
             <li><a href="/practice-areas/">Practice Areas</a></li>
             <li><a href="/about/">About</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/accessibility/">Accessibility</a></li>
-            <li><a href="${escapeHtml(site.privacyUrl)}">Privacy</a></li>
-            <li><a href="${escapeHtml(site.termsUrl)}">Terms</a></li>
           </ul>
+        </div>
+        <div class="site-footer__office stack" style="--stack-space: var(--space-3)">
+          <p class="micro-label">Office hours</p>
+          <p>${escapeHtml(site.hours)}</p>
+          <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>
+        </div>
+        <div class="site-footer__legal stack" style="--stack-space: var(--space-4)">
           <p class="site-footer__disclaimer">${escapeHtml(site.disclaimer)}</p>
-          <p>© ${year} ${escapeHtml(site.firmName)}. All rights reserved.</p>
+          <div class="site-footer__bottom"><p>© ${year} ${escapeHtml(site.firmName)}. All rights reserved.</p><p><a href="${escapeHtml(site.privacyUrl)}">Privacy</a> <a href="${escapeHtml(site.termsUrl)}">Terms</a></p></div>
         </div>
       </div>
     </footer>`;
@@ -127,7 +135,7 @@ export function renderAttorneySummary(attorney) {
     <article class="attorney-summary" id="${escapeHtml(attorney.slug)}-summary">
       <h3 class="attorney-summary__name">${escapeHtml(attorney.name)}</h3>
       <p class="attorney-summary__summary">${escapeHtml(attorney.summary)}</p>
-      <a class="attorney-summary__link" href="/about/#${escapeHtml(attorney.slug)}">Read biography</a>
+      <a class="attorney-summary__link" href="/about/#${escapeHtml(attorney.slug)}">Read biography <span aria-hidden="true">→</span></a>
     </article>`;
 }
 

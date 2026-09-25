@@ -19,16 +19,19 @@ const renderPracticeDirectoryItem = (practice) => `
   </article>`;
 
 export function renderHome({ site, practices, attorneys }) {
-  const practiceGroups = site.practiceGroups.map((group) => `
-    <section class="practice-path">
-      <h3>${escapeHtml(group.title)}</h3>
-      <p class="practice-path__description">${escapeHtml(group.description)}</p>
-      <div class="practice-path__list">
-        ${groupPractices(practices, group.slug).map(renderPracticeLink).join('')}
-      </div>
+  const groupTeasers = {
+    'business-property': 'Business Law · Corporate Law · Real Estate',
+    'disputes-defense': 'Civil Litigation · Criminal Defense · License Defense · Restraining Orders',
+    'families-estates': 'Family Law · Estate Planning · Probate'
+  };
+  const practiceGroups = site.practiceGroups.map((group, index) => `
+    <section class="home-practice-group" id="${escapeHtml(group.slug)}">
+      <div class="home-practice-group__intro"><span class="section-number">0${index + 1}</span><h3>${escapeHtml(group.title)}</h3><p>${escapeHtml(group.description)}</p></div>
+      <div class="home-practice-group__practices">${groupPractices(practices, group.slug).map((practice) => `<article><a href="/${escapeHtml(practice.slug)}/">${escapeHtml(practice.title)} <span aria-hidden="true">→</span></a><ul>${practice.matters.map((matter) => `<li>${escapeHtml(matter)}</li>`).join('')}</ul><a class="practice-more" href="/${escapeHtml(practice.slug)}/">More ${escapeHtml(practice.title.toLowerCase())} matters</a></article>`).join('')}</div>
     </section>`).join('');
 
-  const heroImage = imageBySlug('hem-office-exterior.webp');
+  const heroImage = imageBySlug('hem-office-building.webp');
+  const receptionImage = imageBySlug('hem-office-exterior.webp');
   const confirmedClaims = site.proofClaims.filter((claim) => !claim.requiresVerification);
   const proofBand = confirmedClaims.length
     ? `
@@ -55,13 +58,14 @@ export function renderHome({ site, practices, attorneys }) {
         height: heroImage.height,
         alt: heroImage.alt
       },
-      actions: `<div class="cluster hero__actions"><a class="button button--primary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a><a class="button button--secondary" href="/practice-areas/">Explore practice areas</a></div>`
+      actions: `<div class="cluster hero__actions"><a class="button button--primary" href="${site.phone.href}">Call ${escapeHtml(site.phone.display)}</a><a class="button button--secondary button--secondary-dark" href="/practice-areas/">Explore practice areas</a></div>`,
+      strip: `<div class="hero__practice-strip"><div class="container hero__practice-grid">${site.practiceGroups.map((group) => `<a href="/practice-areas/#${escapeHtml(group.slug)}"><strong>${escapeHtml(group.title)} <span aria-hidden="true">→</span></strong><span>${escapeHtml(groupTeasers[group.slug])}</span></a>`).join('')}</div></div>`
     },
     body: `
-      <section class="section home-intro" id="firm-distinction">
-        <div class="container home-intro__grid">
-          <h2 class="home-intro__statement">Local perspective. Broad legal experience. Direct counsel.</h2>
-          <p class="home-intro__copy lede">A Stockton firm advising individuals and businesses across a wide range of legal matters, with the personal attention of a smaller practice.</p>
+      <section class="section home-firm-intro" id="firm-distinction">
+        <div class="container">
+          <div class="home-firm-intro__top"><div class="stack"><p class="eyebrow">The firm</p><h2>A Stockton firm advising individuals and businesses across a wide range of legal matters, with the personal attention of a smaller practice.</h2><p><a class="arrow-link" href="/about/">Read the firm story <span aria-hidden="true">→</span></a></p></div><figure><img class="home-firm-intro__image" src="/assets/images/${receptionImage.file}" width="${receptionImage.width}" height="${receptionImage.height}" alt="${escapeHtml(receptionImage.alt)}" loading="lazy"><figcaption>Reception, 3414 Brookside Rd. Ste 100, Stockton</figcaption></figure></div>
+          <div class="home-principles"><article><span class="section-number">01</span><h3>Local perspective.</h3><p>In Stockton since 1985, from the office at 3414 Brookside Road.</p></article><article><span class="section-number">02</span><h3>Broad legal experience.</h3><p>Eleven practice areas across business, disputes, defense, families, and estates.</p></article><article><span class="section-number">03</span><h3>Direct counsel.</h3><p>Four attorneys, and you work with them directly.</p></article></div>
         </div>
       </section>${proofBand}
       <section class="section home-practices" aria-labelledby="home-practices-title">
@@ -70,7 +74,7 @@ export function renderHome({ site, practices, attorneys }) {
             <div><p class="eyebrow">Ways we can help</p><h2 id="home-practices-title">Practice areas organized around the problem in front of you.</h2></div>
             <p class="lede">Every practice remains individually accessible. These three paths make it easier to start in the right place.</p>
           </div>
-          <div class="practice-paths">${practiceGroups}</div>
+          <div class="home-practice-groups">${practiceGroups}</div>
         </div>
       </section>
       <section class="section home-attorneys" aria-labelledby="home-attorneys-title">

@@ -103,7 +103,11 @@ export async function validateSite(rootDir = resolve('dist')) {
 
     const nav = html.match(/<nav\b[^>]*(?:aria-label=["']Primary navigation["']|class=["'][^"']*site-nav[^"']*["'])[^>]*>([\s\S]*?)<\/nav>/i);
     const navHrefs = nav ? [...nav[1].matchAll(/<a\b[^>]*href=["']([^"']+)["']/gi)].map((match) => match[1]) : [];
-    if (!nav || PRIMARY_PATHS.some((path) => !navHrefs.includes(path))) {
+    const hasPrimaryLinks = PRIMARY_PATHS.every((path) => {
+      const expected = path === '/' ? join(root, 'index.html') : join(root, path, 'index.html');
+      return navHrefs.some((href) => resolveLocalTarget(root, file, href) === expected);
+    });
+    if (!nav || !hasPrimaryLinks) {
       addError(errors, root, file, 'primary-navigation', 'primary navigation is missing required HTML links');
     }
 
