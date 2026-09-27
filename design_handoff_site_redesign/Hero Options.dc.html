@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<title>Hero options — Hakeem, Ellis &amp; Marengo</title>
+<style>
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#E6E0D5;color:#1A1C20;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;font-size:1.125rem;line-height:1.65}
+h1,h2,h3,p,dl,dd,dt{margin:0}
+a{color:#6D1118;text-decoration-thickness:0.08em;text-underline-offset:0.18em}
+a:hover{color:#3E080D}
+</style>
+</helmet>
+<section data-screen-label="Turn 3 — practice area directions" style="padding:64px;display:flex;flex-direction:column;gap:40px;width:max-content;border-bottom:1px solid #C5BAAA">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:900px">
+    <p style="font-size:0.9375rem;font-weight:600;color:#6D1118">Turn 3 · Practice areas</p>
+    <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.5rem;line-height:1.1">Three directions for “Practice areas organized around the problem in front of you.”</h2>
+    <p style="color:#41464D">The hero strip already links the three groups, so each option goes one level deeper using the practice summaries and matters from practices.json. 3b is clickable.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start">
+
+    <div id="3a" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">3a</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Directory — all eleven practices with their one-line summaries</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <section style="padding-block:112px;background:#F4F0E9">
+          <div style="width:1200px;margin-inline:auto;display:flex;flex-direction:column;gap:56px">
+            <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:64px;align-items:end">
+              <div style="display:flex;flex-direction:column;gap:1rem"><div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Ways we can help</p></div><h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:3rem;line-height:1.1;text-wrap:balance">Practice areas organized around the problem in front of you.</h2></div>
+              <p style="color:#565C64;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Every practice remains individually accessible. These three paths make it easier to start in the right place.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:48px">
+              <sc-for list="{{ practiceGroups }}" as="g" hint-placeholder-count="3">
+                <div style="display:flex;flex-direction:column">
+                  <div style="display:flex;flex-direction:column;gap:0.75rem;padding-bottom:1.5rem;border-bottom:1px solid #1A1C20;min-height:11rem">
+                    <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-size:1.125rem">{{ g.n }}</span>
+                    <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2rem;line-height:1.1">{{ g.title }}</h3>
+                    <p style="color:#565C64;font-size:1rem;line-height:1.5">{{ g.desc }}</p>
+                  </div>
+                  <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
+                    <a href="#" style="display:flex;flex-direction:column;gap:0.375rem;padding-block:1.25rem;border-bottom:1px solid #D8D0C4;color:#1A1C20;text-decoration:none" style-hover="color:#6D1118">
+                      <span style="display:flex;justify-content:space-between;gap:1rem;font-family:Newsreader,Georgia,serif;font-size:1.375rem;line-height:1.25"><span>{{ p.title }}</span><span style="color:#9B6A33">→</span></span>
+                      <span style="color:#565C64;font-size:0.9375rem;line-height:1.5">{{ p.summary }}</span>
+                    </a>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="3b" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">3b</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Explorer — pick a path on the left, see its practices and typical matters</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <section style="padding-block:112px">
+          <div style="width:1200px;margin-inline:auto;display:flex;flex-direction:column;gap:56px">
+            <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:64px;align-items:end">
+              <div style="display:flex;flex-direction:column;gap:1rem"><div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Ways we can help</p></div><h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:3rem;line-height:1.1;text-wrap:balance">Practice areas organized around the problem in front of you.</h2></div>
+              <p style="color:#565C64;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Every practice remains individually accessible. These three paths make it easier to start in the right place.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:22rem minmax(0, 1fr);border-top:1px solid #1A1C20">
+              <div style="display:flex;flex-direction:column;border-right:1px solid #D8D0C4">
+                <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ t.select }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;padding:1.75rem 1.5rem 1.75rem 0;border:0;border-bottom:1px solid #D8D0C4;background:transparent;color:{{ t.color }};text-align:left;cursor:pointer;font:inherit" style-hover="color:#6D1118">
+                    <span style="display:flex;width:100%;justify-content:space-between;align-items:baseline;font-family:Newsreader,Georgia,serif;font-size:1.75rem;line-height:1.15"><span>{{ t.title }}</span><span style="color:#9B6A33;opacity:{{ t.arrow }}">→</span></span>
+                    <span style="color:#565C64;font-size:0.9375rem">{{ t.count }}</span>
+                  </button>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2rem;padding:1.75rem 0 0 3.5rem">
+                <p style="max-width:40rem;color:#41464D;font-size:1.125rem;line-height:1.55">{{ active.desc }}</p>
+                <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:1.5rem">
+                  <sc-for list="{{ active.items }}" as="p" hint-placeholder-count="3">
+                    <a href="#" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;background:#FFFFFF;border:1px solid #D8D0C4;border-radius:0.125rem;color:#1A1C20;text-decoration:none" style-hover="border-color:#6D1118">
+                      <span style="display:flex;justify-content:space-between;gap:1rem;font-family:Newsreader,Georgia,serif;font-size:1.5rem;line-height:1.2"><span>{{ p.title }}</span><span style="color:#6D1118">→</span></span>
+                      <span style="color:#565C64;font-size:0.9375rem;line-height:1.5">{{ p.summary }}</span>
+                      <span style="display:flex;flex-wrap:wrap;gap:0.375rem 1rem;padding-top:0.75rem;border-top:1px solid #EFE9DE;color:#41464D;font-size:0.875rem">
+                        <sc-for list="{{ p.matters }}" as="m" hint-placeholder-count="3"><span>{{ m }}</span></sc-for>
+                      </span>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="3c" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">3c</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">By situation — lead with the matters people search for, practice name second</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <section style="padding-block:112px">
+          <div style="width:1200px;margin-inline:auto;display:flex;flex-direction:column;gap:56px">
+            <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:64px;align-items:end">
+              <div style="display:flex;flex-direction:column;gap:1rem"><div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Ways we can help</p></div><h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:3rem;line-height:1.1;text-wrap:balance">Practice areas organized around the problem in front of you.</h2></div>
+              <p style="color:#565C64;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Every practice remains individually accessible. These three paths make it easier to start in the right place.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;border-top:1px solid #1A1C20">
+              <sc-for list="{{ practiceGroups }}" as="g" hint-placeholder-count="3">
+                <div style="display:grid;grid-template-columns:22rem minmax(0, 1fr);gap:3.5rem;padding-block:2.5rem;border-bottom:1px solid #D8D0C4">
+                  <div style="display:flex;flex-direction:column;gap:0.75rem">
+                    <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-size:1.125rem">{{ g.n }}</span>
+                    <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2rem;line-height:1.1">{{ g.title }}</h3>
+                    <p style="color:#565C64;font-size:1rem;line-height:1.5">{{ g.desc }}</p>
+                  </div>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(15rem, 1fr));gap:1.75rem 2.5rem;align-content:start">
+                    <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
+                      <div style="display:flex;flex-direction:column;gap:0.5rem">
+                        <a href="#" style="font-weight:600;font-size:1rem;text-decoration:none;display:flex;gap:0.5rem" style-hover="text-decoration:underline">{{ p.title }} <span style="color:#9B6A33">→</span></a>
+                        <div style="display:flex;flex-direction:column;gap:0.125rem;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-size:1.1875rem;line-height:1.35">
+                          <sc-for list="{{ p.matters }}" as="m" hint-placeholder-count="3"><span>{{ m }}</span></sc-for>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section data-screen-label="Turn 2 — intro directions" style="padding:64px;display:flex;flex-direction:column;gap:40px;width:max-content;border-bottom:1px solid #C5BAAA">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:900px">
+    <p style="font-size:0.9375rem;font-weight:600;color:#6D1118">Turn 2 · Section after the hero</p>
+    <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.5rem;line-height:1.1">Three directions for “Local perspective. Broad legal experience. Direct counsel.”</h2>
+    <p style="color:#41464D">Each is shown under the bottom of the new hero so you can judge the transition. Current section: plain two-column statement and paragraph.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start">
+
+    <div id="2a" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">2a</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Three principles — the statement split into columns, each backed by a fact</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="background:#1A1C20;color:#FCFAF6;border-top:1px solid rgb(252 250 246 / 0.22)"><div style="width:1200px;margin-inline:auto;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr))"><sc-for list="{{ groups }}" as="g" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:0.375rem;padding:1.5rem 2rem 1.75rem {{ g.pl }};border-left:{{ g.bl }}"><span style="display:flex;justify-content:space-between;font-family:Newsreader,Georgia,serif;font-size:1.5rem;line-height:1.2"><span>{{ g.title }}</span><span style="color:#C9A06A">→</span></span><span style="color:#D8D0C4;font-size:0.9375rem;line-height:1.45">{{ g.list }}</span></div></sc-for></div></div>
+        <section style="padding-block:112px 120px">
+          <div style="width:1200px;margin-inline:auto;display:flex;flex-direction:column;gap:64px">
+            <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:64px;align-items:end">
+              <p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Why clients choose the firm</p>
+              <p style="color:#565C64;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">A Stockton firm advising individuals and businesses across a wide range of legal matters, with the personal attention of a smaller practice.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));border-top:1px solid #1A1C20">
+              <div style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem 2.5rem 0 0">
+                <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-size:1.125rem">01</span>
+                <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.75rem;line-height:1.05">Local perspective.</h3>
+                <p style="color:#565C64;font-size:1.0625rem;line-height:1.55">In Stockton since 1985, from the office at 3414 Brookside Road.</p>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem 2.5rem 0;border-left:1px solid #D8D0C4">
+                <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-size:1.125rem">02</span>
+                <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.75rem;line-height:1.05">Broad legal experience.</h3>
+                <p style="color:#565C64;font-size:1.0625rem;line-height:1.55">Eleven practice areas across business, disputes, defense, families, and estates.</p>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem 0 0 2.5rem;border-left:1px solid #D8D0C4">
+                <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-size:1.125rem">03</span>
+                <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.75rem;line-height:1.05">Direct counsel.</h3>
+                <p style="color:#565C64;font-size:1.0625rem;line-height:1.55">Four attorneys, and you work with them directly.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="2b" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">2b</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Statement band — one large centered line, a pause before the practices</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="background:#1A1C20;color:#FCFAF6;border-top:1px solid rgb(252 250 246 / 0.22)"><div style="width:1200px;margin-inline:auto;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr))"><sc-for list="{{ groups }}" as="g" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:0.375rem;padding:1.5rem 2rem 1.75rem {{ g.pl }};border-left:{{ g.bl }}"><span style="display:flex;justify-content:space-between;font-family:Newsreader,Georgia,serif;font-size:1.5rem;line-height:1.2"><span>{{ g.title }}</span><span style="color:#C9A06A">→</span></span><span style="color:#D8D0C4;font-size:0.9375rem;line-height:1.45">{{ g.list }}</span></div></sc-for></div></div>
+        <section style="padding-block:136px 144px;background:#F7F3EA">
+          <div style="width:1000px;margin-inline:auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2.5rem">
+            <span style="width:48px;height:2px;background:#9B6A33"></span>
+            <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:4.25rem;line-height:1.08;letter-spacing:-0.01em;text-wrap:balance">Local perspective. Broad legal experience. <span style="color:#6D1118">Direct counsel.</span></h2>
+            <p style="max-width:38rem;color:#565C64;font-size:1.25rem;line-height:1.55;text-wrap:pretty">A Stockton firm advising individuals and businesses across a wide range of legal matters, with the personal attention of a smaller practice.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="2c" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">2c</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Statement + reception — brings the lobby photo back, inside the office</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="background:#1A1C20;color:#FCFAF6;border-top:1px solid rgb(252 250 246 / 0.22)"><div style="width:1200px;margin-inline:auto;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr))"><sc-for list="{{ groups }}" as="g" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:0.375rem;padding:1.5rem 2rem 1.75rem {{ g.pl }};border-left:{{ g.bl }}"><span style="display:flex;justify-content:space-between;font-family:Newsreader,Georgia,serif;font-size:1.5rem;line-height:1.2"><span>{{ g.title }}</span><span style="color:#C9A06A">→</span></span><span style="color:#D8D0C4;font-size:0.9375rem;line-height:1.45">{{ g.list }}</span></div></sc-for></div></div>
+        <section style="padding-block:112px">
+          <div style="width:1200px;margin-inline:auto;display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1.1fr);gap:88px;align-items:center">
+            <div style="display:flex;flex-direction:column;gap:2rem">
+              <div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">The firm</p></div>
+              <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:3.5rem;line-height:1.06;text-wrap:balance">Local perspective. Broad legal experience. Direct counsel.</h2>
+              <p style="max-width:32rem;color:#565C64;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">A Stockton firm advising individuals and businesses across a wide range of legal matters, with the personal attention of a smaller practice.</p>
+              <a href="#" style="align-self:flex-start;font-weight:600">Read the firm story</a>
+            </div>
+            <figure style="margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <img src="assets/images/hem-office-exterior.webp" alt="Reception at the Hakeem, Ellis &amp; Marengo office in Stockton" style="display:block;width:100%;aspect-ratio:5 / 4;object-fit:cover;object-position:52% 50%">
+              <figcaption style="color:#565C64;font-size:0.9375rem">Reception, 3414 Brookside Rd. Ste 100, Stockton</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section data-screen-label="Turn 1 — hero directions" style="padding:64px;display:flex;flex-direction:column;gap:40px;width:max-content">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:900px">
+    <p style="font-size:0.9375rem;font-weight:600;color:#6D1118">Turn 1 · Home hero</p>
+    <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:2.5rem;line-height:1.1">Three directions for the hero</h2>
+    <p style="color:#41464D">Same copy as today. Each fixes the current contrast problem (white text on a bright lobby photo, dark secondary button over the image) in a different way. Current page: <a href="Home.dc.html">Home.dc.html</a>.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start">
+
+    <div id="1a" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">1a</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Portico — split panel, office facts on the fold</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="border-bottom:1px solid #D8D0C4;background:#F4F0E9;color:#565C64;font-size:0.9375rem"><div style="width:1200px;margin-inline:auto;display:flex;min-height:2.25rem;align-items:center;justify-content:space-between"><span>Stockton, California</span><span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span></div></div>
+        <header style="border-bottom:1px solid #D8D0C4;background:#FCFAF6"><div style="width:1200px;margin-inline:auto;display:grid;min-height:4.5rem;grid-template-columns:minmax(18rem, 1fr) auto auto;align-items:center;gap:1rem"><div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-size:1.85rem;font-weight:500;line-height:1.05">Hakeem, Ellis &amp; Marengo</span><span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span></div><nav style="display:flex;gap:1.5rem;font-size:0.9375rem;font-weight:600"><span style="color:#6D1118">Home</span><span>Practice Areas</span><span>About</span><span>Contact</span></nav><span style="display:inline-flex;min-height:3rem;align-items:center;padding:0.75rem 1.5rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2">Call (209) 474-2800</span></div></header>
+        <section style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);min-height:640px">
+          <div style="display:flex;flex-direction:column;justify-content:space-between;padding:88px 72px 0 120px">
+            <div style="display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:1.75rem"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600;letter-spacing:0.02em">Attorneys at Law · Stockton, California</p></div>
+              <h1 style="max-width:11ch;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:5.25rem;line-height:1.02;letter-spacing:-0.01em;text-wrap:balance">Serving the Central Valley since 1985</h1>
+              <p style="max-width:30rem;margin-top:1.75rem;color:#41464D;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Experienced legal counsel for businesses, professionals, individuals, and families across Stockton and the Central Valley.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.25rem">
+                <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+                <a href="#" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border:2px solid #C5BAAA;border-radius:0.125rem;color:#1A1C20;font-weight:600;line-height:1.2;text-decoration:none" style-hover="border-color:#6D1118;color:#3E080D">Explore practice areas</a>
+              </div>
+            </div>
+            <dl style="display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;margin-top:64px;padding-block:1.5rem 2rem;border-top:1px solid #D8D0C4">
+              <div style="display:grid;gap:0.25rem"><dt style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Office</dt><dd style="font-size:1rem;line-height:1.45">3414 Brookside Rd. Ste 100<br>Stockton, CA 95219</dd></div>
+              <div style="display:grid;gap:0.25rem"><dt style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Hours</dt><dd style="font-size:1rem;line-height:1.45">Monday–Friday<br>9:00 a.m.–5:00 p.m.</dd></div>
+            </dl>
+          </div>
+          <div style="position:relative;overflow:hidden;background:#D8D0C4">
+            <img src="assets/images/hem-office-building.webp" alt="Exterior of the Hakeem, Ellis &amp; Marengo office at 3414 Brookside Rd." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:48% 50%">
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="1b" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">1b</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Nameplate — full-bleed, dark scrim, practice paths as the next step</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="border-bottom:1px solid #D8D0C4;background:#F4F0E9;color:#565C64;font-size:0.9375rem"><div style="width:1200px;margin-inline:auto;display:flex;min-height:2.25rem;align-items:center;justify-content:space-between"><span>Stockton, California</span><span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span></div></div>
+        <header style="border-bottom:1px solid #D8D0C4;background:#FCFAF6"><div style="width:1200px;margin-inline:auto;display:grid;min-height:4.5rem;grid-template-columns:minmax(18rem, 1fr) auto auto;align-items:center;gap:1rem"><div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-size:1.85rem;font-weight:500;line-height:1.05">Hakeem, Ellis &amp; Marengo</span><span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span></div><nav style="display:flex;gap:1.5rem;font-size:0.9375rem;font-weight:600"><span style="color:#6D1118">Home</span><span>Practice Areas</span><span>About</span><span>Contact</span></nav><span style="display:inline-flex;min-height:3rem;align-items:center;padding:0.75rem 1.5rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2">Call (209) 474-2800</span></div></header>
+        <section style="position:relative;isolation:isolate;overflow:hidden;background:#1A1C20;color:#FCFAF6;min-height:720px;display:flex;flex-direction:column">
+          <img src="assets/images/hem-office-grounds.webp" alt="The Hakeem, Ellis &amp; Marengo monument sign outside the Stockton office" style="position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:30% 60%">
+          <div style="position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg, rgb(26 28 32 / 0.92) 0%, rgb(26 28 32 / 0.82) 38%, rgb(26 28 32 / 0.25) 72%, rgb(26 28 32 / 0.1) 100%), linear-gradient(0deg, rgb(26 28 32 / 0.85) 0%, rgb(26 28 32 / 0) 30%)"></div>
+          <div style="flex:1;width:1200px;margin-inline:auto;display:flex;flex-direction:column;justify-content:center;padding-block:96px 64px">
+            <div style="max-width:40rem;display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:1.75rem"><span style="width:40px;height:2px;background:#C9A06A"></span><p style="color:#E9DCC7;font-size:0.9375rem;font-weight:600;letter-spacing:0.02em">Attorneys at Law · Stockton, California</p></div>
+              <h1 style="max-width:11ch;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:5.5rem;line-height:1.02;letter-spacing:-0.01em;text-wrap:balance">Serving the Central Valley since 1985</h1>
+              <p style="max-width:32rem;margin-top:1.75rem;color:#EFE9DE;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Experienced legal counsel for businesses, professionals, individuals, and families across Stockton and the Central Valley.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.25rem">
+                <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#96313B;color:#FFFFFF">Call (209) 474-2800</a>
+                <a href="#" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border:2px solid rgb(252 250 246 / 0.55);border-radius:0.125rem;color:#FCFAF6;font-weight:600;line-height:1.2;text-decoration:none" style-hover="border-color:#FCFAF6;color:#FFFFFF">Explore practice areas</a>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgb(252 250 246 / 0.22)">
+            <div style="width:1200px;margin-inline:auto;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr))">
+              <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+                <a href="#" style="display:flex;flex-direction:column;gap:0.375rem;padding:1.5rem 2rem 1.75rem {{ g.pl }};border-left:{{ g.bl }};color:#FCFAF6;text-decoration:none" style-hover="color:#FFFFFF;background:rgb(252 250 246 / 0.06)">
+                  <span style="display:flex;justify-content:space-between;align-items:baseline;font-family:Newsreader,Georgia,serif;font-size:1.5rem;line-height:1.2"><span>{{ g.title }}</span><span style="color:#C9A06A">→</span></span>
+                  <span style="color:#D8D0C4;font-size:0.9375rem;line-height:1.45">{{ g.list }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="1c" style="flex:none;width:1440px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;padding:0 10px;background:#1A1C20;color:#FCFAF6;font-weight:600;font-size:0.9375rem">1c</span><span style="font-family:Newsreader,Georgia,serif;font-size:1.5rem">Editorial — type first, the lobby framed below</span></div>
+      <div style="background:#FCFAF6;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.14)">
+        <div style="border-bottom:1px solid #D8D0C4;background:#F4F0E9;color:#565C64;font-size:0.9375rem"><div style="width:1200px;margin-inline:auto;display:flex;min-height:2.25rem;align-items:center;justify-content:space-between"><span>Stockton, California</span><span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span></div></div>
+        <header style="border-bottom:1px solid #D8D0C4;background:#FCFAF6"><div style="width:1200px;margin-inline:auto;display:grid;min-height:4.5rem;grid-template-columns:minmax(18rem, 1fr) auto auto;align-items:center;gap:1rem"><div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-size:1.85rem;font-weight:500;line-height:1.05">Hakeem, Ellis &amp; Marengo</span><span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span></div><nav style="display:flex;gap:1.5rem;font-size:0.9375rem;font-weight:600"><span style="color:#6D1118">Home</span><span>Practice Areas</span><span>About</span><span>Contact</span></nav><span style="display:inline-flex;min-height:3rem;align-items:center;padding:0.75rem 1.5rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2">Call (209) 474-2800</span></div></header>
+        <section style="padding-block:88px 72px">
+          <div style="width:1200px;margin-inline:auto;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:2rem"><span style="width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600;letter-spacing:0.02em">Attorneys at Law · Stockton, California</p></div>
+            <div style="display:grid;grid-template-columns:minmax(0, 1.55fr) minmax(0, 1fr);gap:64px;align-items:end">
+              <h1 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:6.5rem;line-height:0.98;letter-spacing:-0.015em;text-wrap:balance">Serving the Central Valley since 1985</h1>
+              <div style="display:flex;flex-direction:column;gap:1.75rem;padding-bottom:0.5rem">
+                <p style="color:#41464D;font-size:1.1875rem;line-height:1.55;text-wrap:pretty">Experienced legal counsel for businesses, professionals, individuals, and families across Stockton and the Central Valley.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:1rem">
+                  <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+                  <a href="#" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border:2px solid #C5BAAA;border-radius:0.125rem;color:#1A1C20;font-weight:600;line-height:1.2;text-decoration:none" style-hover="border-color:#6D1118;color:#3E080D">Explore practice areas</a>
+                </div>
+              </div>
+            </div>
+            <figure style="margin:64px 0 0;display:flex;flex-direction:column;gap:0.75rem">
+              <img src="assets/images/hem-office-exterior.webp" alt="Reception at the Hakeem, Ellis &amp; Marengo office in Stockton" style="display:block;width:100%;aspect-ratio:21 / 8;object-fit:cover;object-position:50% 42%">
+              <figcaption style="display:flex;justify-content:space-between;color:#565C64;font-size:0.9375rem"><span>Reception, 3414 Brookside Rd. Ste 100, Stockton</span><span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span></figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const G = [
+      ["Business & Property", "Business Law · Corporate Law · Real Estate"],
+      ["Disputes & Defense", "Civil Litigation · Criminal Defense · License Defense · Restraining Orders"],
+      ["Families & Estates", "Family Law · Estate Planning · Probate"]
+    ];
+    const PR = {
+      "Business & Property": [["Business Law","Practical legal guidance for businesses from formation through transactions, disputes, succession, and dissolution.",["Business formation","Contracts","Business purchases and sales","Compliance","Business disputes"]],["Corporate Law","Counsel for formation, governance, agreements, transactions, employment documents, and corporate disputes.",["Entity formation","Corporate governance","Business contracts","Employment documents","Dissolution"]],["Real Estate","Guidance for transactions, development, land use, commercial leases, construction matters, and property disputes.",["Property transactions","Commercial development","Land use","Construction disputes","Easement and ownership disputes"]]],
+      "Disputes & Defense": [["Civil Law","Strategic guidance for individuals, professionals, and businesses facing complex civil disputes.",["Contract disputes","Real estate disputes","Civil claims and defense","Professional disputes"]],["Civil Litigation","Prepared, practical representation for plaintiffs and defendants through negotiation, mediation, and trial.",["Commercial litigation","Contract claims","Property litigation","Plaintiff and defense representation"]],["Criminal Defense","Direct, experienced representation for misdemeanor, felony, DUI, drug, property, and federal criminal matters.",["DUI","Drug offenses","Property crimes","Weapons charges","Misdemeanors and felonies","Post-conviction support"]],["Professional License Defense","Representation for licensed professionals facing investigations, accusations, discipline, or application issues.",["Board investigations","Disciplinary accusations","License applications","Criminal-conviction disclosure","Administrative hearings"]],["Restraining Orders","Representation for people seeking or responding to domestic violence, civil harassment, elder-abuse, and workplace orders.",["Domestic violence orders","Civil harassment orders","Elder-abuse orders","Workplace violence orders","Order defense"]]],
+      "Families & Estates": [["Family Law","Careful legal guidance for divorce, custody, support, adoption, and marital agreements.",["Divorce and separation","Child custody","Visitation","Child support","Adoption","Prenuptial agreements"]],["Estate Planning","Thoughtful planning through wills, trusts, powers of attorney, health directives, and asset-protection strategies.",["Wills","Trusts","Powers of attorney","Health care directives","Asset planning","Trust administration"]],["Probate","Clear support for executors, beneficiaries, and families navigating California probate after a death.",["Opening probate","Executor duties","Creditor claims","Estate assets","Beneficiary distributions"]]]
+    };
+    const D = {
+      "Business & Property": "Counsel for companies, transactions, property, development, and the decisions that shape long-term business interests.",
+      "Disputes & Defense": "Focused representation when rights, reputation, livelihood, or liberty are at stake.",
+      "Families & Estates": "Practical guidance through family transitions, lifetime planning, and the administration of an estate."
+    };
+    const practiceGroups = Object.keys(PR).map((title, i) => ({ n: "0" + (i + 1), title, desc: D[title], items: PR[title].map(([t, s, m]) => ({ title: t, summary: s, matters: m })) }));
+    const ai = this.state?.tab ?? 0;
+    const tabs = practiceGroups.map((g, i) => ({ title: g.title, count: g.items.length + " practices", color: i === ai ? "#6D1118" : "#1A1C20", arrow: i === ai ? 1 : 0, select: () => this.setState({ tab: i }) }));
+    return { practiceGroups, tabs, active: practiceGroups[ai], groups: G.map(([title, list], i) => ({ title, list, pl: i === 0 ? "0" : "2rem", bl: i === 0 ? "0" : "1px solid rgb(252 250 246 / 0.22)" })) };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About the Firm | Hakeem, Ellis &amp; Marengo</title>
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#FCFAF6}
+body{margin:0;background:#FCFAF6;color:#1A1C20;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;font-size:1.125rem;line-height:1.65;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p,dl,dd,ul{margin:0}
+a{color:#6D1118;text-decoration-thickness:0.08em;text-underline-offset:0.18em}
+a:hover{color:#3E080D}
+@keyframes hero-reveal{from{opacity:0;transform:translateY(1.25rem)}to{opacity:1;transform:translateY(0)}}
+</style>
+</helmet>
+<div data-screen-label="About">
+  <div style="border-bottom:1px solid #D8D0C4;background:#F4F0E9;color:#565C64;font-size:0.9375rem">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;min-height:2.25rem;align-items:center;justify-content:space-between;gap:1.5rem">
+      <span>Stockton, California</span>
+      <span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span>
+    </div>
+  </div>
+  <header style="position:sticky;top:0;z-index:100;border-bottom:1px solid #D8D0C4;background:rgb(252 250 246 / 0.96);backdrop-filter:blur(0.75rem)">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;min-height:4.5rem;grid-template-columns:minmax(0, 1fr) auto auto;align-items:center;gap:1rem">
+      <a href="Home v2.dc.html" style="display:inline-flex;flex-direction:column;min-width:0;color:#1A1C20;text-decoration:none">
+        <span style="font-family:Newsreader,Georgia,serif;font-size:clamp(1.25rem, 4.7vw, 1.85rem);font-weight:500;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hakeem, Ellis &amp; Marengo</span>
+        <span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span>
+      </a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:1.5rem">
+        <a href="Home v2.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">Home</a>
+        <a href="Practice Areas.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">Practice Areas</a>
+        <a href="About.dc.html" style="color:#6D1118;font-size:0.9375rem;font-weight:600;text-decoration:none">About</a>
+        <a href="Contact.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">Contact</a>
+      </nav>
+      <a href="tel:+12094742800" style="display:inline-flex;min-height:3rem;align-items:center;justify-content:center;padding:0.75rem 1.5rem;border:2px solid transparent;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ openMenu }}" aria-label="Open navigation" style="display:inline-grid;width:2.75rem;height:2.75rem;place-items:center;border:1px solid #C5BAAA;border-radius:0.125rem;background:transparent;color:#1A1C20;cursor:pointer"><span style="display:flex;flex-direction:column;gap:0.3rem"><span style="width:1.35rem;height:2px;background:currentColor"></span><span style="width:1.35rem;height:2px;background:currentColor"></span><span style="width:1.35rem;height:2px;background:currentColor"></span></span></button>
+      </sc-if>
+    </div>
+  </header>
+  <main>
+    <header data-screen-label="About hero" style="padding-block:clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 4.5rem);background:#F4F0E9;border-bottom:1px solid #D8D0C4">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr));gap:clamp(2rem, 6vw, 5.5rem);align-items:end">
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Stockton · Since 1985</p></div>
+          <h1 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.75rem, 7vw, 5.5rem);line-height:1.02;letter-spacing:-0.01em">About the firm</h1>
+          <p style="max-width:34rem;color:#41464D;font-size:1.25rem;line-height:1.55;text-wrap:pretty">A local firm combining broad legal experience with direct, personal attention.</p>
+        </div>
+        <nav aria-label="Jump to an attorney" style="display:flex;flex-direction:column;gap:0.75rem">
+          <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Our attorneys</p>
+          <div style="display:flex;flex-direction:column;border-top:1px solid #1A1C20">
+            <sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
+              <a href="#{{ t.id }}" style="display:flex;justify-content:space-between;gap:1rem;padding-block:0.875rem;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.375rem;text-decoration:none" style-hover="color:#6D1118"><span>{{ t.name }}</span><span style="color:#9B6A33">↓</span></a>
+            </sc-for>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section data-screen-label="Firm history" style="padding-block:clamp(3.5rem, 7vw, 6rem)">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;flex-wrap:wrap;gap:clamp(2.5rem, 6vw, 5.5rem);align-items:flex-start">
+        <div style="flex:1 1 20rem;max-width:{{ introMax }};position:{{ stickPos }};top:7.5rem;display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Firm history</p></div>
+          <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2rem, 4vw, 3rem);line-height:1.1;text-wrap:balance">Built in Stockton. Trusted across the Central Valley.</h2>
+        </div>
+        <div style="flex:999 1 30rem;display:flex;flex-direction:column;gap:clamp(2.5rem, 5vw, 3.5rem)">
+          <sc-for list="{{ history }}" as="s" hint-placeholder-count="3">
+            <section style="display:grid;grid-template-columns:3rem minmax(0, 1fr);gap:0 1.25rem">
+              <span style="grid-row:1 / span 2;padding-top:0.4rem;color:#9B6A33;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.125rem">{{ s.n }}</span>
+              <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(1.625rem, 2.8vw, 2rem);line-height:1.15;margin-bottom:1rem">{{ s.title }}</h3>
+              <div style="grid-column:2;display:flex;flex-direction:column;gap:1rem;max-width:40rem">
+                <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="2"><p style="color:#25282D;font-size:1.125rem;line-height:1.7;text-wrap:pretty">{{ p }}</p></sc-for>
+              </div>
+            </section>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    <section aria-label="The firm's Stockton office" style="padding-bottom:clamp(3.5rem, 7vw, 6rem)">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr));gap:1.5rem">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:0.75rem"><img src="assets/images/hem-office-building.webp" width="1920" height="756" alt="Hakeem, Ellis &amp; Marengo office building on Brookside Road" loading="lazy" style="display:block;width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover;object-position:50% 50%"><figcaption style="color:#565C64;font-size:0.9375rem">The office on Brookside Road</figcaption></figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:0.75rem"><img src="assets/images/hem-office-exterior.webp" width="1920" height="940" alt="Reception at the Hakeem, Ellis &amp; Marengo office" loading="lazy" style="display:block;width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover;object-position:52% 50%"><figcaption style="color:#565C64;font-size:0.9375rem">Reception, Suite 100</figcaption></figure>
+      </div>
+    </section>
+    <section data-screen-label="Team" style="padding-block:clamp(4rem, 8vw, 7rem);background:#F4F0E9">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;flex-direction:column;gap:clamp(2.5rem, 5vw, 3.5rem)">
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Our attorneys</p></div>
+          <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2rem, 4vw, 3rem);line-height:1.1">Meet the team</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(3rem, 6vw, 4.5rem)">
+          <sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
+            <article id="{{ t.id }}" style="display:flex;flex-wrap:wrap;gap:clamp(2rem, 5vw, 4.5rem);padding-top:2.25rem;border-top:1px solid #1A1C20;scroll-margin-top:7rem">
+              <div style="flex:1 1 18rem;max-width:{{ introMax }};display:flex;flex-direction:column;gap:1rem">
+                <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2rem, 3.4vw, 2.5rem);line-height:1.1">{{ t.name }}</h3>
+                <p style="color:#41464D;font-size:1.0625rem;line-height:1.55;text-wrap:pretty">{{ t.summary }}</p>
+                <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+                  <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Practices</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                    <sc-for list="{{ t.practices }}" as="p" hint-placeholder-count="3"><a href="#" style="flex:none;white-space:nowrap;display:inline-flex;align-items:center;min-height:2.25rem;padding:0.25rem 0.75rem;border:1px solid #C5BAAA;border-radius:0.125rem;background:#FCFAF6;color:#1A1C20;font-size:0.9375rem;text-decoration:none" style-hover="border-color:#6D1118;color:#6D1118">{{ p }}</a></sc-for>
+                  </div>
+                </div>
+              </div>
+              <div style="flex:999 1 30rem;display:flex;flex-direction:column;gap:2rem">
+                <sc-for list="{{ t.bio }}" as="b" hint-placeholder-count="3">
+                  <section style="display:flex;flex-direction:column;gap:0.875rem;max-width:42rem">
+                    <h4 style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#6D1118">{{ b.title }}</h4>
+                    <sc-for list="{{ b.paras }}" as="p" hint-placeholder-count="2"><p style="color:#25282D;font-size:1.0625rem;line-height:1.7;text-wrap:pretty">{{ p }}</p></sc-for>
+                  </section>
+                </sc-for>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section data-screen-label="Contact" style="padding-block:clamp(4rem, 8vw, 7rem);background:#1A1C20;color:#FCFAF6">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr));gap:clamp(2.5rem, 6vw, 5.5rem);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:1.75rem">
+        <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#C9A06A"></span><p style="color:#E9DCC7;font-size:0.9375rem;font-weight:600">Start with a direct conversation</p></div>
+        <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.25rem, 4.6vw, 3.75rem);line-height:1.06;letter-spacing:-0.01em;text-wrap:balance">Talk with the firm about your legal matter.</h2>
+        <p style="max-width:34rem;color:#EFE9DE;font-size:1.125rem;line-height:1.6;text-wrap:pretty">Call during office hours or email the firm to request a conversation. Contacting the office does not by itself create an attorney-client relationship.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:0.5rem">
+          <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#96313B;color:#FFFFFF">Call (209) 474-2800</a>
+          <a href="mailto:info@hemlaw.com" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border:2px solid rgb(252 250 246 / 0.55);border-radius:0.125rem;color:#FCFAF6;font-weight:600;line-height:1.2;text-decoration:none" style-hover="border-color:#FCFAF6;color:#FFFFFF">Email the office</a>
+        </div>
+      </div>
+      <dl style="display:flex;flex-direction:column;border-top:1px solid rgb(252 250 246 / 0.4)">
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Office</dt><dd style="line-height:1.5">3414 Brookside Rd. Ste 100<br>Stockton, CA 95219</dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Hours</dt><dd style="line-height:1.5">Monday–Friday, 9:00 a.m.–5:00 p.m.</dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Phone</dt><dd style="line-height:1.5"><a href="tel:+12094742800" style="color:#FCFAF6" style-hover="color:#FFFFFF">(209) 474-2800</a></dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Email</dt><dd style="line-height:1.5"><a href="mailto:info@hemlaw.com" style="color:#FCFAF6" style-hover="color:#FFFFFF">info@hemlaw.com</a></dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Directions</dt><dd style="line-height:1.5"><a href="https://www.google.com/maps/search/?api=1&amp;query=3414%20Brookside%20Rd.%20Ste%20100%2C%20Stockton%2C%20CA%2095219" style="display:inline-flex;gap:0.5rem;color:#FCFAF6;font-weight:600;text-decoration:none" style-hover="text-decoration:underline">Open in Google Maps <span style="color:#D9B27A">→</span></a></dd></div>
+      </dl>
+    </div>
+  </section>
+  <footer data-screen-label="Footer" style="padding-block:clamp(3rem, 6vw, 4.5rem) 2rem;background:#F4F0E9;font-size:0.9375rem">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;flex-direction:column;gap:clamp(2.5rem, 5vw, 3.5rem)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr));gap:2.5rem">
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-size:1.625rem;font-weight:500;line-height:1.1">Hakeem, Ellis &amp; Marengo</span><span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span></div>
+          <p style="line-height:1.55">3414 Brookside Rd. Ste 100<br>Stockton, CA 95219<br><a href="tel:+12094742800" style="color:#1A1C20">(209) 474-2800</a></p>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:0.625rem">
+          <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.25rem">Firm</p>
+          <a href="Practice Areas.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Practice Areas</a><a href="About.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">About</a><a href="Contact.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Contact</a><a href="Accessibility.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Accessibility</a>
+        </nav>
+        <div style="display:flex;flex-direction:column;gap:0.625rem">
+          <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.25rem">Office hours</p>
+          <p style="line-height:1.55">Monday–Friday<br>9:00 a.m.–5:00 p.m.</p>
+          <a href="mailto:info@hemlaw.com" style="color:#1A1C20">info@hemlaw.com</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;padding-top:1.5rem;border-top:1px solid #C5BAAA">
+        <p style="max-width:68ch;color:#565C64;font-size:0.875rem;line-height:1.6">The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.75rem 1.5rem;color:#565C64;font-size:0.875rem">
+          <p>© 2026 Hakeem, Ellis &amp; Marengo. All rights reserved.</p>
+          <div style="display:flex;gap:1.5rem"><a href="https://www.broadproximity.com/client-privacy-policy" style="color:#565C64" style-hover="color:#6D1118">Privacy</a><a href="https://www.broadproximity.com/client-terms-of-use" style="color:#565C64" style-hover="color:#6D1118">Terms</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:150;background:rgb(26 28 32 / 0.72)"></div>
+    <aside aria-label="Mobile navigation" style="position:fixed;top:0;right:0;bottom:0;z-index:200;width:min(88vw, 26rem);overflow-y:auto;padding:2rem clamp(1.125rem, 4vw, 3rem);background:#FFFFFF;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.24);display:flex;flex-direction:column;gap:2rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem"><span style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.375rem">Hakeem, Ellis &amp; Marengo</span><button type="button" onClick="{{ closeMenu }}" aria-label="Close navigation" style="display:inline-grid;width:2.75rem;height:2.75rem;place-items:center;border:1px solid #C5BAAA;border-radius:0.125rem;background:transparent;color:#1A1C20;font-size:1.5rem;cursor:pointer">×</button></div>
+      <nav style="display:flex;flex-direction:column;border-top:1px solid #1A1C20"><a href="Home v2.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Home</a><a href="Practice Areas.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Practice Areas</a><a href="About.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">About</a><a href="Contact.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Contact</a></nav>
+      <div style="display:flex;flex-direction:column;gap:0.75rem"><a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a><a href="mailto:info@hemlaw.com" style="align-self:flex-start">info@hemlaw.com</a><p style="color:#565C64;font-size:0.9375rem">Monday–Friday, 9:00 a.m.–5:00 p.m.</p></div>
+    </aside>
+  </sc-if>
+  <sc-if value="{{ showCall }}" hint-placeholder-val="{{ false }}">
+    <div style="height:4.5rem"></div>
+    <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none;position:fixed;left:0.75rem;right:0.75rem;bottom:calc(0.75rem + env(safe-area-inset-bottom));z-index:90;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.24)" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440 };
+  componentDidMount() { this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR); this.onK = e => { if (e.key === "Escape") this.setState({ menu: false }); }; window.addEventListener("keydown", this.onK); }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); window.removeEventListener("keydown", this.onK); }
+  renderVals() {
+    const wide = this.state.w >= 992;
+    const H = [
+      ["Four attorneys. One direct relationship.", ["Michael Hakeem and Albert Ellis founded the firm in Stockton in 1985. Today, Hakeem, Ellis & Marengo advises individuals, families, professionals, and businesses throughout the Central Valley and represents clients in California trial courts.", "The practice spans business and corporate law, civil disputes and litigation, criminal defense, estate planning, family law, probate, professional license defense, real estate, and restraining orders. That range allows the attorneys to recognize when one legal issue affects another and to build a coordinated strategy."]],
+      ["Broad experience with personal attention", ["The firm is intentionally small enough for direct attorney involvement while offering the depth of experience associated with a broader practice. Clients work with lawyers who understand the file, explain the real choices, and stay focused on a practical result.", "Some matters call for a careful transaction or a durable plan. Others require negotiation, an administrative hearing, or trial. In each setting, the attorneys emphasize preparation, candid evaluation, responsiveness, and efficient use of the client’s resources."]],
+      ["The firm’s commitment", ["Hakeem, Ellis & Marengo is built around integrity, service, and strong legal work. Its attorneys aim to provide timely advice, take responsibility for the matter entrusted to them, and give clients the information they need to make sound decisions."]]
+    ];
+    const T = [
+      ["michael-hakeem", "Michael D. Hakeem", "More than five decades of experience in real estate, land use, transactions, environmental compliance, and civil law.", ["Real Estate", "Business Law", "Civil Law"], [
+        ["Experience", ["Michael D. Hakeem has more than five decades of experience in real estate and civil law. He represents corporate entities and advises on real estate acquisition and development, environmental compliance, land use, contracts, deeds, construction agreements, and other transactional matters.", "Mr. Hakeem has advised many of the Central Valley’s largest corporations and regularly appears before county boards of supervisors, local planning commissions, and state agencies. He is also an experienced negotiator who has resolved many matters through settlement when that serves the client better than litigation."]],
+        ["Education and admissions", ["Mr. Hakeem was admitted to the State Bar of California in 1973 and is admitted to the United States District Courts for the Central and Eastern Districts of California. He earned his bachelor’s degree from the University of San Francisco in 1968 and his law degree from Santa Clara University in 1972. He served as president of Phi Alpha Delta from 1971 to 1972."]],
+        ["Professional service and practice focus", ["Mr. Hakeem has served the San Joaquin County Bar Association as a member of its Board of Governors, on its Client Relations Committee, and as bar president from 1985 to 1986. His professional memberships have included the State Bar of California, California Trial Lawyers Association, and San Joaquin County Trial Lawyers.", "His reported case includes California Aviation Council v. County of Amador (FHA Properties, Inc.), 200 Cal.App.3d 337 (1998). His practice focuses on real estate law, real property acquisition and development, land-use entitlements, environmental compliance, transactions, and related civil matters."]]]],
+      ["albert-ellis", "Albert M. Ellis", "A seasoned Central Valley trial attorney with extensive civil, criminal, family, and professional-license experience.", ["Civil Litigation", "Criminal Defense", "Family Law", "Professional License Defense", "Restraining Orders"], [
+        ["Experience", ["Albert M. Ellis is a Central Valley trial attorney with decades of experience in civil and criminal cases. He has resolved matters through jury trials, court trials, arbitration, mediation, and negotiated settlement, giving clients a practical view of both courtroom risk and opportunities for resolution.", "His work includes criminal defense, family law, restraining orders, business and employment litigation, professional license defense before state disciplinary boards, attorney discipline matters before the State Bar of California, and student-discipline cases involving civil-rights issues."]],
+        ["Education and admissions", ["Mr. Ellis was admitted to the State Bar of California in 1978. He is also admitted to the United States District Court for the Eastern District of California and the Supreme Court of the United States. He earned an honors bachelor’s degree from the University of California, Berkeley in 1975 and his law degree from Pepperdine University in 1977. He served as an editor of the Clinical Law Journal during 1977 and 1978."]],
+        ["Professional service and practice focus", ["Mr. Ellis is a member of the San Joaquin County Bar Association and the State Bar of California. His practice focuses on trials and dispute resolution, criminal defense, family matters, restraining orders, business and employment litigation, and the defense of licensed professionals."]]]],
+      ["renee-marengo", "Renee M. Marengo", "Counsel for business formation, corporate matters, estate planning, trusts, probate, and wealth-management decisions.", ["Business Law", "Corporate Law", "Estate Planning", "Probate"], [
+        ["Experience", ["Renee M. Marengo advises clients forming corporations, partnerships, limited liability companies, nonprofit corporations, and other California business entities. She helps owners choose and document a structure that reflects management, ownership, liability, and long-term plans.", "Ms. Marengo also counsels corporations and individuals on assets and liabilities, estate planning, trusts, probate, and wealth-management strategies. Her combined business and estate experience is especially useful when a closely held company, real property, or succession plan crosses between personal and corporate decisions."]],
+        ["Education and admissions", ["Ms. Marengo was admitted to the State Bar of California in 1984. She earned her bachelor’s degree from the University of California, San Diego in 1980 and her law degree from the University of San Francisco in 1984."]],
+        ["Professional service and practice focus", ["Her professional memberships have included the San Joaquin County Bar Association, American Bar Association, State Bar of California, and San Joaquin County Women Lawyers, where she served as president from 1985 to 1986.", "Her practice focuses on general corporate law, business formation and governance, estate planning, trusts, probate, and related asset-planning matters."]]]],
+      ["stephen-baker", "Stephen J. Baker", "Civil and criminal litigator experienced in trials, appeals, family law, real-property disputes, and restraining orders.", ["Civil Litigation", "Criminal Defense", "Family Law", "Real Estate", "Restraining Orders"], [
+        ["Experience", ["Stephen J. Baker handles civil and criminal litigation, including trials and appeals. His work includes civil disputes, restraining orders, real property and partition actions, eminent domain, breach of contract, prenuptial agreements, family law, and criminal defense.", "Before joining private practice, Mr. Baker served as a Former Deputy District Attorney at the San Joaquin County District Attorney’s Office. That experience informs his assessment of criminal charges, evidence, courtroom procedure, and case resolution."]],
+        ["Education and admissions", ["Mr. Baker was admitted to the State Bar of California in 2023. He earned an honors bachelor’s degree from Sonoma State University and graduated magna cum laude from Humphreys University Lawrence Drivon School of Law in 2022."]],
+        ["Practice focus", ["His practice focuses on civil litigation, criminal defense, family law, real-property disputes, partition and eminent-domain matters, contract claims, appeals, and restraining-order proceedings."]]]]
+    ];
+    return {
+      wide, narrow: !wide, menuOpen: !!this.state.menu, showCall: !wide, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }),
+      stickPos: wide ? "sticky" : "static", introMax: this.state.w < 1100 ? "40rem" : "22rem",
+      history: H.map(([title, paras], i) => ({ n: "0" + (i + 1), title, paras })),
+      team: T.map(([id, name, summary, practices, bio]) => ({ id, name, summary, practices, bio: bio.map(([title, paras]) => ({ title, paras })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

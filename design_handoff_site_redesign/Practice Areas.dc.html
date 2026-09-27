@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Practice Areas | Hakeem, Ellis &amp; Marengo</title>
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("assets/fonts/newsreader-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("assets/fonts/source-sans-3-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#FCFAF6}
+body{margin:0;background:#FCFAF6;color:#1A1C20;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;font-size:1.125rem;line-height:1.65;text-rendering:optimizeLegibility}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+a{color:#6D1118;text-decoration-thickness:0.08em;text-underline-offset:0.18em}
+a:hover{color:#3E080D}
+@keyframes hero-reveal{from{opacity:0;transform:translateY(1.25rem)}to{opacity:1;transform:translateY(0)}}
+</style>
+</helmet>
+<div data-screen-label="Practice Areas">
+  <div style="border-bottom:1px solid #D8D0C4;background:#F4F0E9;color:#565C64;font-size:0.9375rem">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;min-height:2.25rem;align-items:center;justify-content:space-between;gap:1.5rem">
+      <span>Stockton, California</span>
+      <span>Monday–Friday, 9:00 a.m.–5:00 p.m.</span>
+    </div>
+  </div>
+  <header style="position:sticky;top:0;z-index:100;border-bottom:1px solid #D8D0C4;background:rgb(252 250 246 / 0.96);backdrop-filter:blur(0.75rem)">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;min-height:4.5rem;grid-template-columns:minmax(0, 1fr) auto auto;align-items:center;gap:1rem">
+      <a href="Home v2.dc.html" style="display:inline-flex;flex-direction:column;min-width:0;color:#1A1C20;text-decoration:none">
+        <span style="font-family:Newsreader,Georgia,serif;font-size:clamp(1.25rem, 4.7vw, 1.85rem);font-weight:500;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hakeem, Ellis &amp; Marengo</span>
+        <span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span>
+      </a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:1.5rem">
+        <a href="Home v2.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">Home</a>
+        <a href="Practice Areas.dc.html" style="color:#6D1118;font-size:0.9375rem;font-weight:600;text-decoration:none">Practice Areas</a>
+        <a href="About.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">About</a>
+        <a href="Contact.dc.html" style="color:#1A1C20;font-size:0.9375rem;font-weight:600;text-decoration:none" style-hover="color:#6D1118">Contact</a>
+      </nav>
+      <a href="tel:+12094742800" style="display:inline-flex;min-height:3rem;align-items:center;justify-content:center;padding:0.75rem 1.5rem;border:2px solid transparent;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ openMenu }}" aria-label="Open navigation" style="display:inline-grid;width:2.75rem;height:2.75rem;place-items:center;border:1px solid #C5BAAA;border-radius:0.125rem;background:transparent;color:#1A1C20;cursor:pointer"><span style="display:flex;flex-direction:column;gap:0.3rem"><span style="width:1.35rem;height:2px;background:currentColor"></span><span style="width:1.35rem;height:2px;background:currentColor"></span><span style="width:1.35rem;height:2px;background:currentColor"></span></span></button>
+      </sc-if>
+    </div>
+  </header>
+  <main>
+    <header data-screen-label="Practice Areas hero" style="padding-block:clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 4.5rem);background:#F4F0E9;border-bottom:1px solid #D8D0C4">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr));gap:clamp(2rem, 6vw, 5.5rem);align-items:end">
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#9B6A33"></span><p style="color:#6D1118;font-size:0.9375rem;font-weight:600">Legal services</p></div>
+          <h1 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.75rem, 7vw, 5.5rem);line-height:1.02;letter-spacing:-0.01em">Practice areas</h1>
+          <p style="max-width:34rem;color:#41464D;font-size:1.25rem;line-height:1.55;text-wrap:pretty">The firm’s work is organized into three clear paths so you can find the right starting point.</p>
+        </div>
+        <nav aria-label="Jump to a practice group" style="display:flex;flex-direction:column;border-top:1px solid #1A1C20">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+            <a href="#{{ g.id }}" style="display:grid;grid-template-columns:2.5rem minmax(0, 1fr) auto;align-items:baseline;gap:0.75rem;padding-block:1rem;border-bottom:1px solid #D8D0C4;color:#1A1C20;text-decoration:none" style-hover="color:#6D1118">
+              <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1rem">{{ g.n }}</span>
+              <span style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;line-height:1.2">{{ g.title }}</span>
+              <span style="color:#565C64;font-size:0.9375rem">{{ g.count }}</span>
+            </a>
+          </sc-for>
+        </nav>
+      </div>
+    </header>
+    <section data-screen-label="Practice directory" style="padding-block:clamp(3.5rem, 7vw, 6rem)">
+      <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;flex-direction:column;gap:clamp(3rem, 6vw, 4.5rem)">
+        <p style="max-width:44rem;color:#565C64;font-size:1.125rem;line-height:1.6;text-wrap:pretty">This grouping is a simple way to find a useful starting point. It does not limit the firm's services or the ways its attorneys may be able to help.</p>
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+          <section id="{{ g.id }}" style="display:flex;flex-wrap:wrap;gap:clamp(1.5rem, 5vw, 4rem);padding-top:2.25rem;border-top:1px solid #1A1C20;scroll-margin-top:7rem">
+            <div style="flex:1 1 {{ groupBasis }};max-width:{{ groupMax }};display:flex;flex-direction:column;gap:0.75rem">
+              <span style="color:#9B6A33;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.125rem">{{ g.n }}</span>
+              <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2rem, 3.4vw, 2.5rem);line-height:1.1">{{ g.title }}</h2>
+              <p style="color:#565C64;font-size:1.0625rem;line-height:1.55">{{ g.desc }}</p>
+            </div>
+            <div style="flex:999 1 28rem;display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 20rem), 1fr));gap:1.25rem">
+              <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
+                <a href="#" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;background:#FFFFFF;border:1px solid #D8D0C4;border-radius:0.125rem;color:#1A1C20;text-decoration:none" style-hover="border-color:#6D1118">
+                  <span style="display:flex;justify-content:space-between;gap:1rem;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;line-height:1.2"><span>{{ p.title }}</span><span style="color:#6D1118">→</span></span>
+                  <span style="color:#565C64;font-size:0.9375rem;line-height:1.5">{{ p.summary }}</span>
+                  <span style="padding-top:0.75rem;border-top:1px solid #EFE9DE;color:#41464D;font-size:0.875rem;line-height:1.5">{{ p.matters }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </section>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+  <section data-screen-label="Contact" style="padding-block:clamp(4rem, 8vw, 7rem);background:#1A1C20;color:#FCFAF6">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr));gap:clamp(2.5rem, 6vw, 5.5rem);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:1.75rem">
+        <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:40px;height:2px;background:#C9A06A"></span><p style="color:#E9DCC7;font-size:0.9375rem;font-weight:600">Start with a direct conversation</p></div>
+        <h2 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.25rem, 4.6vw, 3.75rem);line-height:1.06;letter-spacing:-0.01em;text-wrap:balance">Talk with the firm about your legal matter.</h2>
+        <p style="max-width:34rem;color:#EFE9DE;font-size:1.125rem;line-height:1.6;text-wrap:pretty">Call during office hours or email the firm to request a conversation. Contacting the office does not by itself create an attorney-client relationship.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:0.5rem">
+          <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#96313B;color:#FFFFFF">Call (209) 474-2800</a>
+          <a href="mailto:info@hemlaw.com" style="display:inline-flex;min-height:3.25rem;align-items:center;padding:0.75rem 1.75rem;border:2px solid rgb(252 250 246 / 0.55);border-radius:0.125rem;color:#FCFAF6;font-weight:600;line-height:1.2;text-decoration:none" style-hover="border-color:#FCFAF6;color:#FFFFFF">Email the office</a>
+        </div>
+      </div>
+      <dl style="display:flex;flex-direction:column;border-top:1px solid rgb(252 250 246 / 0.4)">
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Office</dt><dd style="line-height:1.5">3414 Brookside Rd. Ste 100<br>Stockton, CA 95219</dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Hours</dt><dd style="line-height:1.5">Monday–Friday, 9:00 a.m.–5:00 p.m.</dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Phone</dt><dd style="line-height:1.5"><a href="tel:+12094742800" style="color:#FCFAF6" style-hover="color:#FFFFFF">(209) 474-2800</a></dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Email</dt><dd style="line-height:1.5"><a href="mailto:info@hemlaw.com" style="color:#FCFAF6" style-hover="color:#FFFFFF">info@hemlaw.com</a></dd></div>
+        <div style="display:grid;grid-template-columns:minmax(6.5rem, auto) minmax(0, 1fr);gap:1rem;padding-block:1.125rem;border-bottom:1px solid rgb(252 250 246 / 0.18)"><dt style="color:#C9BFAF;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Directions</dt><dd style="line-height:1.5"><a href="https://www.google.com/maps/search/?api=1&amp;query=3414%20Brookside%20Rd.%20Ste%20100%2C%20Stockton%2C%20CA%2095219" style="display:inline-flex;gap:0.5rem;color:#FCFAF6;font-weight:600;text-decoration:none" style-hover="text-decoration:underline">Open in Google Maps <span style="color:#D9B27A">→</span></a></dd></div>
+      </dl>
+    </div>
+  </section>
+  <footer data-screen-label="Footer" style="padding-block:clamp(3rem, 6vw, 4.5rem) 2rem;background:#F4F0E9;font-size:0.9375rem">
+    <div style="width:min(100% - 2 * clamp(1.125rem, 4vw, 3rem), 75rem);margin-inline:auto;display:flex;flex-direction:column;gap:clamp(2.5rem, 5vw, 3.5rem)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr));gap:2.5rem">
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-size:1.625rem;font-weight:500;line-height:1.1">Hakeem, Ellis &amp; Marengo</span><span style="color:#565C64;font-size:0.8125rem">A Professional Corporation</span></div>
+          <p style="line-height:1.55">3414 Brookside Rd. Ste 100<br>Stockton, CA 95219<br><a href="tel:+12094742800" style="color:#1A1C20">(209) 474-2800</a></p>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:0.625rem">
+          <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.25rem">Firm</p>
+          <a href="Practice Areas.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Practice Areas</a><a href="About.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">About</a><a href="Contact.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Contact</a><a href="Accessibility.dc.html" style="color:#1A1C20;text-decoration:none;font-size:0.9375rem" style-hover="color:#6D1118">Accessibility</a>
+        </nav>
+        <div style="display:flex;flex-direction:column;gap:0.625rem">
+          <p style="color:#565C64;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.25rem">Office hours</p>
+          <p style="line-height:1.55">Monday–Friday<br>9:00 a.m.–5:00 p.m.</p>
+          <a href="mailto:info@hemlaw.com" style="color:#1A1C20">info@hemlaw.com</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;padding-top:1.5rem;border-top:1px solid #C5BAAA">
+        <p style="max-width:68ch;color:#565C64;font-size:0.875rem;line-height:1.6">The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.75rem 1.5rem;color:#565C64;font-size:0.875rem">
+          <p>© 2026 Hakeem, Ellis &amp; Marengo. All rights reserved.</p>
+          <div style="display:flex;gap:1.5rem"><a href="https://www.broadproximity.com/client-privacy-policy" style="color:#565C64" style-hover="color:#6D1118">Privacy</a><a href="https://www.broadproximity.com/client-terms-of-use" style="color:#565C64" style-hover="color:#6D1118">Terms</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:150;background:rgb(26 28 32 / 0.72)"></div>
+    <aside aria-label="Mobile navigation" style="position:fixed;top:0;right:0;bottom:0;z-index:200;width:min(88vw, 26rem);overflow-y:auto;padding:2rem clamp(1.125rem, 4vw, 3rem);background:#FFFFFF;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.24);display:flex;flex-direction:column;gap:2rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem"><span style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.375rem">Hakeem, Ellis &amp; Marengo</span><button type="button" onClick="{{ closeMenu }}" aria-label="Close navigation" style="display:inline-grid;width:2.75rem;height:2.75rem;place-items:center;border:1px solid #C5BAAA;border-radius:0.125rem;background:transparent;color:#1A1C20;font-size:1.5rem;cursor:pointer">×</button></div>
+      <nav style="display:flex;flex-direction:column;border-top:1px solid #1A1C20"><a href="Home v2.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Home</a><a href="Practice Areas.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Practice Areas</a><a href="About.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">About</a><a href="Contact.dc.html" style="display:flex;min-height:3.25rem;align-items:center;border-bottom:1px solid #D8D0C4;color:#1A1C20;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.5rem;text-decoration:none" style-hover="color:#6D1118">Contact</a></nav>
+      <div style="display:flex;flex-direction:column;gap:0.75rem"><a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a><a href="mailto:info@hemlaw.com" style="align-self:flex-start">info@hemlaw.com</a><p style="color:#565C64;font-size:0.9375rem">Monday–Friday, 9:00 a.m.–5:00 p.m.</p></div>
+    </aside>
+  </sc-if>
+  <sc-if value="{{ showCall }}" hint-placeholder-val="{{ false }}">
+    <div style="height:4.5rem"></div>
+    <a href="tel:+12094742800" style="display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;padding:0.75rem 1.75rem;border-radius:0.125rem;background:#6D1118;color:#FFFFFF;font-weight:600;line-height:1.2;text-decoration:none;position:fixed;left:0.75rem;right:0.75rem;bottom:calc(0.75rem + env(safe-area-inset-bottom));z-index:90;box-shadow:0 1.5rem 4rem rgb(0 0 0 / 0.24)" style-hover="background:#3E080D;color:#FFFFFF">Call (209) 474-2800</a>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440 };
+  componentDidMount() { this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR); this.onK = e => { if (e.key === "Escape") this.setState({ menu: false }); }; window.addEventListener("keydown", this.onK); }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); window.removeEventListener("keydown", this.onK); }
+  renderVals() {
+    const wide = this.state.w >= 992;
+    const PR = {
+      "Business & Property": [["Business Law","Practical legal guidance for businesses from formation through transactions, disputes, succession, and dissolution.",["Business formation","Contracts","Business purchases and sales","Compliance","Business disputes"]],["Corporate Law","Counsel for formation, governance, agreements, transactions, employment documents, and corporate disputes.",["Entity formation","Corporate governance","Business contracts","Employment documents","Dissolution"]],["Real Estate","Guidance for transactions, development, land use, commercial leases, construction matters, and property disputes.",["Property transactions","Commercial development","Land use","Construction disputes","Easement and ownership disputes"]]],
+      "Disputes & Defense": [["Civil Law","Strategic guidance for individuals, professionals, and businesses facing complex civil disputes.",["Contract disputes","Real estate disputes","Civil claims and defense","Professional disputes"]],["Civil Litigation","Prepared, practical representation for plaintiffs and defendants through negotiation, mediation, and trial.",["Commercial litigation","Contract claims","Property litigation","Plaintiff and defense representation"]],["Criminal Defense","Direct, experienced representation for misdemeanor, felony, DUI, drug, property, and federal criminal matters.",["DUI","Drug offenses","Property crimes","Weapons charges","Misdemeanors and felonies","Post-conviction support"]],["Professional License Defense","Representation for licensed professionals facing investigations, accusations, discipline, or application issues.",["Board investigations","Disciplinary accusations","License applications","Criminal-conviction disclosure","Administrative hearings"]],["Restraining Orders","Representation for people seeking or responding to domestic violence, civil harassment, elder-abuse, and workplace orders.",["Domestic violence orders","Civil harassment orders","Elder-abuse orders","Workplace violence orders","Order defense"]]],
+      "Families & Estates": [["Family Law","Careful legal guidance for divorce, custody, support, adoption, and marital agreements.",["Divorce and separation","Child custody","Visitation","Child support","Adoption","Prenuptial agreements"]],["Estate Planning","Thoughtful planning through wills, trusts, powers of attorney, health directives, and asset-protection strategies.",["Wills","Trusts","Powers of attorney","Health care directives","Asset planning","Trust administration"]],["Probate","Clear support for executors, beneficiaries, and families navigating California probate after a death.",["Opening probate","Executor duties","Creditor claims","Estate assets","Beneficiary distributions"]]]
+    };
+    const GD = { "Business & Property": ["business-property", "Counsel for companies, transactions, property, development, and the decisions that shape long-term business interests."], "Disputes & Defense": ["disputes-defense", "Focused representation when rights, reputation, livelihood, or liberty are at stake."], "Families & Estates": ["families-estates", "Practical guidance through family transitions, lifetime planning, and the administration of an estate."] };
+    const narrowGroup = this.state.w < 1100;
+    return {
+      wide, narrow: !wide, menuOpen: !!this.state.menu, showCall: !wide, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }),
+      groupBasis: narrowGroup ? "100%" : "18rem", groupMax: narrowGroup ? "40rem" : "22rem",
+      groups: Object.keys(PR).map((title, i) => ({ n: "0" + (i + 1), id: GD[title][0], title, desc: GD[title][1], count: PR[title].length + " practices", items: PR[title].map(([t, s, m]) => ({ title: t, summary: s, matters: m.join(" · ") })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>
